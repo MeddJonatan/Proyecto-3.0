@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5bfdc5e315043b48ef456de5330ccc2" Name="Diagram1" ZoomLevel="17" ShowGrid="true" DisplayType="true" >
+        <EntityTypeShape EntityType="ModeloBD.Empleados" Width="3" PointX="26.5" PointY="21" />
+        <EntityTypeShape EntityType="ModeloBD.Genero" Width="3.375" PointX="41.125" PointY="17.25" />
+        <EntityTypeShape EntityType="ModeloBD.Paises" Width="3.375" PointX="41.125" PointY="33.875" />
+        <EntityTypeShape EntityType="ModeloBD.Tiendas" Width="3" PointX="26.5" PointY="13.5" />
+        <EntityTypeShape EntityType="ModeloBD.NumerosTelefonicos" Width="3.625" PointX="34.125" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloBD.EmpresasTelefonicas" Width="3.625" PointX="34.125" PointY="10.75" />
+        <EntityTypeShape EntityType="ModeloBD.DatosUsuarios" Width="3.625" PointX="34.125" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloBD.Clientes" Width="3" PointX="26.5" PointY="25.25" />
+        <EntityTypeShape EntityType="ModeloBD.Tipo_DocumentoIdentidad" Width="3.375" PointX="41.125" PointY="29.125" />
+        <EntityTypeShape EntityType="ModeloBD.DocumentoIdentidad" Width="3.375" PointX="41.125" PointY="24.625" />
+        <EntityTypeShape EntityType="ModeloBD.Entradas" Width="3.125" PointX="28.625" PointY="5.125" />
+        <EntityTypeShape EntityType="ModeloBD.Detalle_Entradas" Width="3.125" PointX="22.375" PointY="5.625" />
+        <EntityTypeShape EntityType="ModeloBD.Proveedores" Width="3.125" PointX="34.875" PointY="5.75" />
+        <EntityTypeShape EntityType="ModeloBD.Productos" Width="3.125" PointX="16.125" PointY="4.875" />
+        <EntityTypeShape EntityType="ModeloBD.UnidadesMedidas" Width="3.125" PointX="9.875" PointY="1" />
+        <EntityTypeShape EntityType="ModeloBD.TipoEntrada" Width="3.125" PointX="28.625" PointY="1.125" />
+        <EntityTypeShape EntityType="ModeloBD.CategoriasProductos" Width="3.125" PointX="3.5" PointY="5.375" />
+        <EntityTypeShape EntityType="ModeloBD.SubCategoriasProductos" Width="3.125" PointX="9.875" PointY="5.125" />
+        <EntityTypeShape EntityType="ModeloBD.MarcasProductos" Width="3.125" PointX="16.125" PointY="0.5" />
+        <EntityTypeShape EntityType="ModeloBD.Salidas" Width="3.125" PointX="16.125" PointY="16" />
+        <EntityTypeShape EntityType="ModeloBD.TipoSalida" Width="3.125" PointX="9.875" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModeloBD.Detalle_Salidas" Width="3.125" PointX="16.125" PointY="10.5" />
+        <AssociationConnector Association="ModeloBD.EmpleadosEntradas" />
+        <AssociationConnector Association="ModeloBD.TiendasEmpleados" />
+        <AssociationConnector Association="ModeloBD.EmpleadosSalidas" />
+        <AssociationConnector Association="ModeloBD.GeneroDatosUsuarios" />
+        <AssociationConnector Association="ModeloBD.PaisesTipo_DocumentoIdentidad" />
+        <AssociationConnector Association="ModeloBD.TiendasNumerosTelefonicos" />
+        <AssociationConnector Association="ModeloBD.TiendasEntradas" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloBD.EmpresaTelefonicaNumerosTelefonicos" />
+        <AssociationConnector Association="ModeloBD.DocumentoIdentidadDatosUsuarios" />
+        <AssociationConnector Association="ModeloBD.NumerosTelefonicosDatosUsuarios" />
+        <AssociationConnector Association="ModeloBD.ClientesSalidas" />
+        <AssociationConnector Association="ModeloBD.Tipo_DocumentoIdentidadDocumentoIdentidad" />
+        <AssociationConnector Association="ModeloBD.ProveedoresEntradas" />
+        <AssociationConnector Association="ModeloBD.TipoEntradaEntradas" />
+        <AssociationConnector Association="ModeloBD.EntradasDetalle_Entrada" />
+        <AssociationConnector Association="ModeloBD.ProductosDetalle_Entrada" />
+        <AssociationConnector Association="ModeloBD.UnidadesMedidasProductos" ManuallyRouted="true" >
+          <ConnectorPoint PointX="13" PointY="1.9825664765114142" />
+          <ConnectorPoint PointX="14.698785164277067" PointY="1.9825664765114142" />
+          <ConnectorPoint PointX="14.698785164277067" PointY="5.5465515420461422" />
+          <ConnectorPoint PointX="16.125" PointY="5.5465515420461422" />
+        </AssociationConnector>
+        <AssociationConnector Association="ModeloBD.MarcasProductosProductos" />
+        <AssociationConnector Association="ModeloBD.SubCategoriasProductosProductos" />
+        <AssociationConnector Association="ModeloBD.CategoriasProductosSubCategoriasProductos" />
+        <AssociationConnector Association="ModeloBD.TipoSalidaSalidas" />
+        <AssociationConnector Association="ModeloBD.SalidasDetalle_Salidas" />
+        <AssociationConnector Association="ModeloBD.ProductosDetalle_Salidas" />
+        <InheritanceConnector EntityType="ModeloBD.Clientes" />
+        <InheritanceConnector EntityType="ModeloBD.Empleados" />
+        <AssociationConnector Association="ModeloBD.TiendasSalidas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

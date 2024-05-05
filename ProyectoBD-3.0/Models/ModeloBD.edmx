@@ -1,0 +1,1644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModeloBD.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloBDStoreContainer">
+    <EntitySet Name="GeneroSet" EntityType="ModeloBD.Store.GeneroSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaisesSet" EntityType="ModeloBD.Store.PaisesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TiendasSet" EntityType="ModeloBD.Store.TiendasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NumerosTelefonicosSet" EntityType="ModeloBD.Store.NumerosTelefonicosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpresasTelefonicasSet" EntityType="ModeloBD.Store.EmpresasTelefonicasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatosUsuariosSet" EntityType="ModeloBD.Store.DatosUsuariosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipo_DocumentoIdentidadSet" EntityType="ModeloBD.Store.Tipo_DocumentoIdentidadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DocumentoIdentidadSet" EntityType="ModeloBD.Store.DocumentoIdentidadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EntradasSet" EntityType="ModeloBD.Store.EntradasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Detalle_EntradasSet" EntityType="ModeloBD.Store.Detalle_EntradasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProveedoresSet" EntityType="ModeloBD.Store.ProveedoresSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductosSet" EntityType="ModeloBD.Store.ProductosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UnidadesMedidasSet" EntityType="ModeloBD.Store.UnidadesMedidasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoEntradaSet" EntityType="ModeloBD.Store.TipoEntradaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoriasProductosSet" EntityType="ModeloBD.Store.CategoriasProductosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubCategoriasProductosSet" EntityType="ModeloBD.Store.SubCategoriasProductosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MarcasProductosSet" EntityType="ModeloBD.Store.MarcasProductosSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalidasSet" EntityType="ModeloBD.Store.SalidasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoSalidaSet" EntityType="ModeloBD.Store.TipoSalidaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Detalle_SalidasSet" EntityType="ModeloBD.Store.Detalle_SalidasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatosUsuariosSet_Empleados" EntityType="ModeloBD.Store.DatosUsuariosSet_Empleados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatosUsuariosSet_Clientes" EntityType="ModeloBD.Store.DatosUsuariosSet_Clientes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="EmpleadosEntradas" Association="ModeloBD.Store.EmpleadosEntradas">
+      <End Role="Empleados" EntitySet="DatosUsuariosSet_Empleados" />
+      <End Role="Entradas" EntitySet="EntradasSet" />
+    </AssociationSet>
+    <AssociationSet Name="TiendasEmpleados" Association="ModeloBD.Store.TiendasEmpleados">
+      <End Role="Tiendas" EntitySet="TiendasSet" />
+      <End Role="Empleados" EntitySet="DatosUsuariosSet_Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="EmpleadosSalidas" Association="ModeloBD.Store.EmpleadosSalidas">
+      <End Role="Empleados" EntitySet="DatosUsuariosSet_Empleados" />
+      <End Role="Salidas" EntitySet="SalidasSet" />
+    </AssociationSet>
+    <AssociationSet Name="GeneroDatosUsuarios" Association="ModeloBD.Store.GeneroDatosUsuarios">
+      <End Role="Genero" EntitySet="GeneroSet" />
+      <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="PaisesTipo_DocumentoIdentidad" Association="ModeloBD.Store.PaisesTipo_DocumentoIdentidad">
+      <End Role="Paises" EntitySet="PaisesSet" />
+      <End Role="Tipo_DocumentoIdentidad" EntitySet="Tipo_DocumentoIdentidadSet" />
+    </AssociationSet>
+    <AssociationSet Name="TiendasNumerosTelefonicos" Association="ModeloBD.Store.TiendasNumerosTelefonicos">
+      <End Role="Tiendas" EntitySet="TiendasSet" />
+      <End Role="NumerosTelefonicos" EntitySet="NumerosTelefonicosSet" />
+    </AssociationSet>
+    <AssociationSet Name="TiendasEntradas" Association="ModeloBD.Store.TiendasEntradas">
+      <End Role="Tiendas" EntitySet="TiendasSet" />
+      <End Role="Entradas" EntitySet="EntradasSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmpresaTelefonicaNumerosTelefonicos" Association="ModeloBD.Store.EmpresaTelefonicaNumerosTelefonicos">
+      <End Role="EmpresasTelefonicas" EntitySet="EmpresasTelefonicasSet" />
+      <End Role="NumerosTelefonicos" EntitySet="NumerosTelefonicosSet" />
+    </AssociationSet>
+    <AssociationSet Name="DocumentoIdentidadDatosUsuarios" Association="ModeloBD.Store.DocumentoIdentidadDatosUsuarios">
+      <End Role="DocumentoIdentidad" EntitySet="DocumentoIdentidadSet" />
+      <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="NumerosTelefonicosDatosUsuarios" Association="ModeloBD.Store.NumerosTelefonicosDatosUsuarios">
+      <End Role="NumerosTelefonicos" EntitySet="NumerosTelefonicosSet" />
+      <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="ClientesSalidas" Association="ModeloBD.Store.ClientesSalidas">
+      <End Role="Clientes" EntitySet="DatosUsuariosSet_Clientes" />
+      <End Role="Salidas" EntitySet="SalidasSet" />
+    </AssociationSet>
+    <AssociationSet Name="Tipo_DocumentoIdentidadDocumentoIdentidad" Association="ModeloBD.Store.Tipo_DocumentoIdentidadDocumentoIdentidad">
+      <End Role="Tipo_DocumentoIdentidad" EntitySet="Tipo_DocumentoIdentidadSet" />
+      <End Role="DocumentoIdentidad" EntitySet="DocumentoIdentidadSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProveedoresEntradas" Association="ModeloBD.Store.ProveedoresEntradas">
+      <End Role="Proveedores" EntitySet="ProveedoresSet" />
+      <End Role="Entradas" EntitySet="EntradasSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoEntradaEntradas" Association="ModeloBD.Store.TipoEntradaEntradas">
+      <End Role="TipoEntrada" EntitySet="TipoEntradaSet" />
+      <End Role="Entradas" EntitySet="EntradasSet" />
+    </AssociationSet>
+    <AssociationSet Name="EntradasDetalle_Entrada" Association="ModeloBD.Store.EntradasDetalle_Entrada">
+      <End Role="Entradas" EntitySet="EntradasSet" />
+      <End Role="Detalle_Entradas" EntitySet="Detalle_EntradasSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductosDetalle_Entrada" Association="ModeloBD.Store.ProductosDetalle_Entrada">
+      <End Role="Productos" EntitySet="ProductosSet" />
+      <End Role="Detalle_Entradas" EntitySet="Detalle_EntradasSet" />
+    </AssociationSet>
+    <AssociationSet Name="UnidadesMedidasProductos" Association="ModeloBD.Store.UnidadesMedidasProductos">
+      <End Role="UnidadesMedidas" EntitySet="UnidadesMedidasSet" />
+      <End Role="Productos" EntitySet="ProductosSet" />
+    </AssociationSet>
+    <AssociationSet Name="MarcasProductosProductos" Association="ModeloBD.Store.MarcasProductosProductos">
+      <End Role="MarcasProductos" EntitySet="MarcasProductosSet" />
+      <End Role="Productos" EntitySet="ProductosSet" />
+    </AssociationSet>
+    <AssociationSet Name="SubCategoriasProductosProductos" Association="ModeloBD.Store.SubCategoriasProductosProductos">
+      <End Role="SubCategoriasProductos" EntitySet="SubCategoriasProductosSet" />
+      <End Role="Productos" EntitySet="ProductosSet" />
+    </AssociationSet>
+    <AssociationSet Name="CategoriasProductosSubCategoriasProductos" Association="ModeloBD.Store.CategoriasProductosSubCategoriasProductos">
+      <End Role="CategoriasProductos" EntitySet="CategoriasProductosSet" />
+      <End Role="SubCategoriasProductos" EntitySet="SubCategoriasProductosSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoSalidaSalidas" Association="ModeloBD.Store.TipoSalidaSalidas">
+      <End Role="TipoSalida" EntitySet="TipoSalidaSet" />
+      <End Role="Salidas" EntitySet="SalidasSet" />
+    </AssociationSet>
+    <AssociationSet Name="SalidasDetalle_Salidas" Association="ModeloBD.Store.SalidasDetalle_Salidas">
+      <End Role="Salidas" EntitySet="SalidasSet" />
+      <End Role="Detalle_Salidas" EntitySet="Detalle_SalidasSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProductosDetalle_Salidas" Association="ModeloBD.Store.ProductosDetalle_Salidas">
+      <End Role="Productos" EntitySet="ProductosSet" />
+      <End Role="Detalle_Salidas" EntitySet="Detalle_SalidasSet" />
+    </AssociationSet>
+    <AssociationSet Name="TiendasSalidas" Association="ModeloBD.Store.TiendasSalidas">
+      <End Role="Tiendas" EntitySet="TiendasSet" />
+      <End Role="Salidas" EntitySet="SalidasSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_inherits_DatosUsuarios" Association="ModeloBD.Store.FK_Empleados_inherits_DatosUsuarios">
+      <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+      <End Role="Empleados" EntitySet="DatosUsuariosSet_Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_inherits_DatosUsuarios" Association="ModeloBD.Store.FK_Clientes_inherits_DatosUsuarios">
+      <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+      <End Role="Clientes" EntitySet="DatosUsuariosSet_Clientes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GeneroSet">
+    <Key>
+      <PropertyRef Name="ID_Genero" />
+    </Key>
+    <Property Name="ID_Genero" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Genero" Type="bigint" Nullable="false" />
+    <Property Name="Descripcion_Genero" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaisesSet">
+    <Key>
+      <PropertyRef Name="ID_Pais" />
+    </Key>
+    <Property Name="ID_Pais" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Pais" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_Pais" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre_Pais" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nacionalidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Sufijo_Pais" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TiendasSet">
+    <Key>
+      <PropertyRef Name="ID_Tienda" />
+    </Key>
+    <Property Name="ID_Tienda" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Tienda" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_Tienda" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre_Tienda" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion_Tienda" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_Ciudad" Type="bigint" Nullable="false" />
+    <Property Name="ID_NumTelefono" Type="bigint" Nullable="false" />
+    <Property Name="ID_Entrada" Type="bigint" Nullable="false" />
+    <Property Name="ID_Empleado" Type="bigint" Nullable="false" />
+    <Property Name="ID_Salida" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NumerosTelefonicosSet">
+    <Key>
+      <PropertyRef Name="ID_NumTelefono" />
+    </Key>
+    <Property Name="ID_NumTelefono" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroTelefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_EmpresaTelefonica" Type="bigint" Nullable="false" />
+    <Property Name="Tiendas_ID_Tienda" Type="bigint" Nullable="false" />
+    <Property Name="EmpresaTelefonica_ID_EmpresaTelefonica" Type="bigint" Nullable="false" />
+    <Property Name="DatosUsuarios_ID_DatoUsuario" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpresasTelefonicasSet">
+    <Key>
+      <PropertyRef Name="ID_EmpresaTelefonica" />
+    </Key>
+    <Property Name="ID_EmpresaTelefonica" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_EmpresaTelefonica" Type="bigint" Nullable="false" />
+    <Property Name="Nombre_EmpresaTelefonica" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatosUsuariosSet">
+    <Key>
+      <PropertyRef Name="ID_DatoUsuario" />
+    </Key>
+    <Property Name="ID_DatoUsuario" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrimerNombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SegundoNombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrimerApellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SegundoApellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Edad" Type="smallint" Nullable="false" />
+    <Property Name="ID_NumTelefono" Type="bigint" Nullable="false" />
+    <Property Name="ID_Genero" Type="bigint" Nullable="false" />
+    <Property Name="ID_DocumentoIdentidad" Type="bigint" Nullable="false" />
+    <Property Name="Genero_ID_Genero" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipo_DocumentoIdentidadSet">
+    <Key>
+      <PropertyRef Name="ID_TipoDocumentoIdentidad" />
+    </Key>
+    <Property Name="ID_TipoDocumentoIdentidad" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_TipoDocumentoIdentidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion_TipoDocumentoIdentidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_Pais" Type="bigint" Nullable="false" />
+    <Property Name="Paises_ID_Pais" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DocumentoIdentidadSet">
+    <Key>
+      <PropertyRef Name="ID_DocumentoIdentidad" />
+    </Key>
+    <Property Name="ID_DocumentoIdentidad" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_DocumentoIdentidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaEmision_DocumentoIdentidad" Type="datetime" Nullable="false" />
+    <Property Name="FechaFinalizacion_DocumentoIdentidad" Type="datetime" Nullable="false" />
+    <Property Name="ID_TipoDocumentoIdentidad" Type="bigint" Nullable="false" />
+    <Property Name="DatosUsuarios_ID_DatoUsuario" Type="bigint" Nullable="false" />
+    <Property Name="Tipo_DocumentoIdentidad_ID_TipoDocumentoIdentidad" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EntradasSet">
+    <Key>
+      <PropertyRef Name="ID_Entrada" />
+    </Key>
+    <Property Name="ID_Entrada" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Entrada" Type="bigint" Nullable="false" />
+    <Property Name="CodigoEntrada" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaEntrada" Type="datetime" Nullable="false" />
+    <Property Name="ID_Proveedor" Type="bigint" Nullable="false" />
+    <Property Name="ID_TipoEntrada" Type="bigint" Nullable="false" />
+    <Property Name="ID_PagoEntrada" Type="bigint" Nullable="false" />
+    <Property Name="ID_Empleado" Type="bigint" Nullable="false" />
+    <Property Name="Empleados_ID_DatoUsuario" Type="bigint" Nullable="false" />
+    <Property Name="Tiendas_ID_Tienda" Type="bigint" Nullable="false" />
+    <Property Name="Proveedores_ID_Proveedor" Type="bigint" Nullable="false" />
+    <Property Name="TipoEntrada_ID_TipoEntrada" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalle_EntradasSet">
+    <Key>
+      <PropertyRef Name="ID_DetalleEntrada" />
+    </Key>
+    <Property Name="ID_DetalleEntrada" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cantidad_DetalleEntrada" Type="bigint" Nullable="false" />
+    <Property Name="Precio_DetalleEntrada" Type="bigint" Nullable="false" />
+    <Property Name="ID_Entrada" Type="bigint" Nullable="false" />
+    <Property Name="ID_Producto" Type="bigint" Nullable="false" />
+    <Property Name="Entradas_ID_Entrada" Type="bigint" Nullable="false" />
+    <Property Name="Productos_ID_Producto" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProveedoresSet">
+    <Key>
+      <PropertyRef Name="ID_Proveedor" />
+    </Key>
+    <Property Name="ID_Proveedor" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RazonSocial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CodigoTributario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_NumTelefono" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductosSet">
+    <Key>
+      <PropertyRef Name="ID_Producto" />
+    </Key>
+    <Property Name="ID_Producto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo_Producto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre_Producto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_MarcaProducto" Type="bigint" Nullable="false" />
+    <Property Name="ID_UnidadMedida" Type="bigint" Nullable="false" />
+    <Property Name="ID_SubCategoriaProducto" Type="bigint" Nullable="false" />
+    <Property Name="UnidadesMedidas_ID_UnidadMedida" Type="bigint" Nullable="false" />
+    <Property Name="MarcasProductos_ID_MarcaProducto" Type="bigint" Nullable="false" />
+    <Property Name="SubCategoriasProductos_ID_SubCategoriaProducto" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnidadesMedidasSet">
+    <Key>
+      <PropertyRef Name="ID_UnidadMedida" />
+    </Key>
+    <Property Name="ID_UnidadMedida" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_UnidadMedidad" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_UnidadMedida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Abreviatura_UnidadMedida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion_UnidadMedida" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoEntradaSet">
+    <Key>
+      <PropertyRef Name="ID_TipoEntrada" />
+    </Key>
+    <Property Name="ID_TipoEntrada" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_TipoEntrada" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_TipoEntrada" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion_TipoEntrada" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoriasProductosSet">
+    <Key>
+      <PropertyRef Name="ID_CategoriaProducto" />
+    </Key>
+    <Property Name="ID_CategoriaProducto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_CategoriaProducto" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_CategoriaProducto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion_CategoriaProducto" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubCategoriasProductosSet">
+    <Key>
+      <PropertyRef Name="ID_SubCategoriaProducto" />
+    </Key>
+    <Property Name="ID_SubCategoriaProducto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_SubCategoriaProducto" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_SubCategoriaProducto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion_SubCategoriaProducto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_CategoriaProducto" Type="bigint" Nullable="false" />
+    <Property Name="CategoriasProductos_ID_CategoriaProducto" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MarcasProductosSet">
+    <Key>
+      <PropertyRef Name="ID_MarcaProducto" />
+    </Key>
+    <Property Name="ID_MarcaProducto" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_MarcaProducto" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_MarcaProducto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre_MarcaProducto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Web_MarcaProducto" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalidasSet">
+    <Key>
+      <PropertyRef Name="ID_Salida" />
+    </Key>
+    <Property Name="ID_Salida" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Salida" Type="bigint" Nullable="false" />
+    <Property Name="CodigoSalida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaSalida" Type="datetime" Nullable="false" />
+    <Property Name="ID_TipoSalida" Type="bigint" Nullable="false" />
+    <Property Name="ID_Empleado" Type="bigint" Nullable="false" />
+    <Property Name="ID_Cliente" Type="bigint" Nullable="false" />
+    <Property Name="Empleados_ID_DatoUsuario" Type="bigint" Nullable="false" />
+    <Property Name="Clientes_ID_DatoUsuario" Type="bigint" Nullable="false" />
+    <Property Name="TipoSalida_ID_TipoSalida" Type="bigint" Nullable="false" />
+    <Property Name="Tiendas_ID_Tienda" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoSalidaSet">
+    <Key>
+      <PropertyRef Name="ID_TipoSalida" />
+    </Key>
+    <Property Name="ID_TipoSalida" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_TipoSalida" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_TipoSalida" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion_TipoSalida" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalle_SalidasSet">
+    <Key>
+      <PropertyRef Name="ID_DetalleSalida" />
+    </Key>
+    <Property Name="ID_DetalleSalida" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cantidad_DetalleSalida" Type="bigint" Nullable="false" />
+    <Property Name="Precio_DetalleSalida" Type="bigint" Nullable="false" />
+    <Property Name="ID_Salida" Type="bigint" Nullable="false" />
+    <Property Name="ID_Producto" Type="bigint" Nullable="false" />
+    <Property Name="Salidas_ID_Salida" Type="bigint" Nullable="false" />
+    <Property Name="Productos_ID_Producto" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatosUsuariosSet_Empleados">
+    <Key>
+      <PropertyRef Name="ID_DatoUsuario" />
+    </Key>
+    <Property Name="ID_Empleado" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Empleado" Type="bigint" Nullable="false" />
+    <Property Name="Codigo_Empleado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NO_INSS" Type="bigint" Nullable="false" />
+    <Property Name="Estado_Empleado" Type="bit" Nullable="false" />
+    <Property Name="ID_DatoUsuario" Type="bigint" Nullable="false" />
+    <Property Name="Tiendas_ID_Tienda" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatosUsuariosSet_Clientes">
+    <Key>
+      <PropertyRef Name="ID_DatoUsuario" />
+    </Key>
+    <Property Name="ID_Cliente" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NO_Cliente" Type="bigint" Nullable="false" />
+    <Property Name="ID_DatoUsuario" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="EmpleadosEntradas">
+    <End Role="Empleados" Type="ModeloBD.Store.DatosUsuariosSet_Empleados" Multiplicity="1" />
+    <End Role="Entradas" Type="ModeloBD.Store.EntradasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="Entradas">
+        <PropertyRef Name="Empleados_ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TiendasEmpleados">
+    <End Role="Tiendas" Type="ModeloBD.Store.TiendasSet" Multiplicity="1" />
+    <End Role="Empleados" Type="ModeloBD.Store.DatosUsuariosSet_Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tiendas">
+        <PropertyRef Name="ID_Tienda" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="Tiendas_ID_Tienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpleadosSalidas">
+    <End Role="Empleados" Type="ModeloBD.Store.DatosUsuariosSet_Empleados" Multiplicity="1" />
+    <End Role="Salidas" Type="ModeloBD.Store.SalidasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="Salidas">
+        <PropertyRef Name="Empleados_ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GeneroDatosUsuarios">
+    <End Role="Genero" Type="ModeloBD.Store.GeneroSet" Multiplicity="1" />
+    <End Role="DatosUsuarios" Type="ModeloBD.Store.DatosUsuariosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genero">
+        <PropertyRef Name="ID_Genero" />
+      </Principal>
+      <Dependent Role="DatosUsuarios">
+        <PropertyRef Name="Genero_ID_Genero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisesTipo_DocumentoIdentidad">
+    <End Role="Paises" Type="ModeloBD.Store.PaisesSet" Multiplicity="1" />
+    <End Role="Tipo_DocumentoIdentidad" Type="ModeloBD.Store.Tipo_DocumentoIdentidadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="ID_Pais" />
+      </Principal>
+      <Dependent Role="Tipo_DocumentoIdentidad">
+        <PropertyRef Name="Paises_ID_Pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TiendasNumerosTelefonicos">
+    <End Role="Tiendas" Type="ModeloBD.Store.TiendasSet" Multiplicity="1" />
+    <End Role="NumerosTelefonicos" Type="ModeloBD.Store.NumerosTelefonicosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tiendas">
+        <PropertyRef Name="ID_Tienda" />
+      </Principal>
+      <Dependent Role="NumerosTelefonicos">
+        <PropertyRef Name="Tiendas_ID_Tienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TiendasEntradas">
+    <End Role="Tiendas" Type="ModeloBD.Store.TiendasSet" Multiplicity="1" />
+    <End Role="Entradas" Type="ModeloBD.Store.EntradasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tiendas">
+        <PropertyRef Name="ID_Tienda" />
+      </Principal>
+      <Dependent Role="Entradas">
+        <PropertyRef Name="Tiendas_ID_Tienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpresaTelefonicaNumerosTelefonicos">
+    <End Role="EmpresasTelefonicas" Type="ModeloBD.Store.EmpresasTelefonicasSet" Multiplicity="1" />
+    <End Role="NumerosTelefonicos" Type="ModeloBD.Store.NumerosTelefonicosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpresasTelefonicas">
+        <PropertyRef Name="ID_EmpresaTelefonica" />
+      </Principal>
+      <Dependent Role="NumerosTelefonicos">
+        <PropertyRef Name="EmpresaTelefonica_ID_EmpresaTelefonica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DocumentoIdentidadDatosUsuarios">
+    <End Role="DocumentoIdentidad" Type="ModeloBD.Store.DocumentoIdentidadSet" Multiplicity="*" />
+    <End Role="DatosUsuarios" Type="ModeloBD.Store.DatosUsuariosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DatosUsuarios">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="DocumentoIdentidad">
+        <PropertyRef Name="DatosUsuarios_ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NumerosTelefonicosDatosUsuarios">
+    <End Role="NumerosTelefonicos" Type="ModeloBD.Store.NumerosTelefonicosSet" Multiplicity="*" />
+    <End Role="DatosUsuarios" Type="ModeloBD.Store.DatosUsuariosSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DatosUsuarios">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="NumerosTelefonicos">
+        <PropertyRef Name="DatosUsuarios_ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClientesSalidas">
+    <End Role="Clientes" Type="ModeloBD.Store.DatosUsuariosSet_Clientes" Multiplicity="1" />
+    <End Role="Salidas" Type="ModeloBD.Store.SalidasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="Salidas">
+        <PropertyRef Name="Clientes_ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tipo_DocumentoIdentidadDocumentoIdentidad">
+    <End Role="Tipo_DocumentoIdentidad" Type="ModeloBD.Store.Tipo_DocumentoIdentidadSet" Multiplicity="1" />
+    <End Role="DocumentoIdentidad" Type="ModeloBD.Store.DocumentoIdentidadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_DocumentoIdentidad">
+        <PropertyRef Name="ID_TipoDocumentoIdentidad" />
+      </Principal>
+      <Dependent Role="DocumentoIdentidad">
+        <PropertyRef Name="Tipo_DocumentoIdentidad_ID_TipoDocumentoIdentidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProveedoresEntradas">
+    <End Role="Proveedores" Type="ModeloBD.Store.ProveedoresSet" Multiplicity="1" />
+    <End Role="Entradas" Type="ModeloBD.Store.EntradasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="ID_Proveedor" />
+      </Principal>
+      <Dependent Role="Entradas">
+        <PropertyRef Name="Proveedores_ID_Proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoEntradaEntradas">
+    <End Role="TipoEntrada" Type="ModeloBD.Store.TipoEntradaSet" Multiplicity="1" />
+    <End Role="Entradas" Type="ModeloBD.Store.EntradasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoEntrada">
+        <PropertyRef Name="ID_TipoEntrada" />
+      </Principal>
+      <Dependent Role="Entradas">
+        <PropertyRef Name="TipoEntrada_ID_TipoEntrada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EntradasDetalle_Entrada">
+    <End Role="Entradas" Type="ModeloBD.Store.EntradasSet" Multiplicity="1" />
+    <End Role="Detalle_Entradas" Type="ModeloBD.Store.Detalle_EntradasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entradas">
+        <PropertyRef Name="ID_Entrada" />
+      </Principal>
+      <Dependent Role="Detalle_Entradas">
+        <PropertyRef Name="Entradas_ID_Entrada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductosDetalle_Entrada">
+    <End Role="Productos" Type="ModeloBD.Store.ProductosSet" Multiplicity="1" />
+    <End Role="Detalle_Entradas" Type="ModeloBD.Store.Detalle_EntradasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="ID_Producto" />
+      </Principal>
+      <Dependent Role="Detalle_Entradas">
+        <PropertyRef Name="Productos_ID_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UnidadesMedidasProductos">
+    <End Role="UnidadesMedidas" Type="ModeloBD.Store.UnidadesMedidasSet" Multiplicity="1" />
+    <End Role="Productos" Type="ModeloBD.Store.ProductosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UnidadesMedidas">
+        <PropertyRef Name="ID_UnidadMedida" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="UnidadesMedidas_ID_UnidadMedida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarcasProductosProductos">
+    <End Role="MarcasProductos" Type="ModeloBD.Store.MarcasProductosSet" Multiplicity="1" />
+    <End Role="Productos" Type="ModeloBD.Store.ProductosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcasProductos">
+        <PropertyRef Name="ID_MarcaProducto" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="MarcasProductos_ID_MarcaProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubCategoriasProductosProductos">
+    <End Role="SubCategoriasProductos" Type="ModeloBD.Store.SubCategoriasProductosSet" Multiplicity="1" />
+    <End Role="Productos" Type="ModeloBD.Store.ProductosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoriasProductos">
+        <PropertyRef Name="ID_SubCategoriaProducto" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="SubCategoriasProductos_ID_SubCategoriaProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoriasProductosSubCategoriasProductos">
+    <End Role="CategoriasProductos" Type="ModeloBD.Store.CategoriasProductosSet" Multiplicity="1" />
+    <End Role="SubCategoriasProductos" Type="ModeloBD.Store.SubCategoriasProductosSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoriasProductos">
+        <PropertyRef Name="ID_CategoriaProducto" />
+      </Principal>
+      <Dependent Role="SubCategoriasProductos">
+        <PropertyRef Name="CategoriasProductos_ID_CategoriaProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoSalidaSalidas">
+    <End Role="TipoSalida" Type="ModeloBD.Store.TipoSalidaSet" Multiplicity="1" />
+    <End Role="Salidas" Type="ModeloBD.Store.SalidasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoSalida">
+        <PropertyRef Name="ID_TipoSalida" />
+      </Principal>
+      <Dependent Role="Salidas">
+        <PropertyRef Name="TipoSalida_ID_TipoSalida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SalidasDetalle_Salidas">
+    <End Role="Salidas" Type="ModeloBD.Store.SalidasSet" Multiplicity="1" />
+    <End Role="Detalle_Salidas" Type="ModeloBD.Store.Detalle_SalidasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salidas">
+        <PropertyRef Name="ID_Salida" />
+      </Principal>
+      <Dependent Role="Detalle_Salidas">
+        <PropertyRef Name="Salidas_ID_Salida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductosDetalle_Salidas">
+    <End Role="Productos" Type="ModeloBD.Store.ProductosSet" Multiplicity="1" />
+    <End Role="Detalle_Salidas" Type="ModeloBD.Store.Detalle_SalidasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="ID_Producto" />
+      </Principal>
+      <Dependent Role="Detalle_Salidas">
+        <PropertyRef Name="Productos_ID_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TiendasSalidas">
+    <End Role="Tiendas" Type="ModeloBD.Store.TiendasSet" Multiplicity="1" />
+    <End Role="Salidas" Type="ModeloBD.Store.SalidasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tiendas">
+        <PropertyRef Name="ID_Tienda" />
+      </Principal>
+      <Dependent Role="Salidas">
+        <PropertyRef Name="Tiendas_ID_Tienda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_inherits_DatosUsuarios">
+    <End Role="DatosUsuarios" Type="ModeloBD.Store.DatosUsuariosSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleados" Type="ModeloBD.Store.DatosUsuariosSet_Empleados" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DatosUsuarios">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_inherits_DatosUsuarios">
+    <End Role="DatosUsuarios" Type="ModeloBD.Store.DatosUsuariosSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Clientes" Type="ModeloBD.Store.DatosUsuariosSet_Clientes" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DatosUsuarios">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="ID_DatoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModeloBD" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModeloBDContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GeneroSet" EntityType="ModeloBD.Genero" />
+          <EntitySet Name="PaisesSet" EntityType="ModeloBD.Paises" />
+          <EntitySet Name="TiendasSet" EntityType="ModeloBD.Tiendas" />
+          <EntitySet Name="NumerosTelefonicosSet" EntityType="ModeloBD.NumerosTelefonicos" />
+          <EntitySet Name="EmpresasTelefonicasSet" EntityType="ModeloBD.EmpresasTelefonicas" />
+          <EntitySet Name="DatosUsuariosSet" EntityType="ModeloBD.DatosUsuarios" />
+          <EntitySet Name="Tipo_DocumentoIdentidadSet" EntityType="ModeloBD.Tipo_DocumentoIdentidad" />
+          <EntitySet Name="DocumentoIdentidadSet" EntityType="ModeloBD.DocumentoIdentidad" />
+          <EntitySet Name="EntradasSet" EntityType="ModeloBD.Entradas" />
+          <EntitySet Name="Detalle_EntradasSet" EntityType="ModeloBD.Detalle_Entradas" />
+          <EntitySet Name="ProveedoresSet" EntityType="ModeloBD.Proveedores" />
+          <EntitySet Name="ProductosSet" EntityType="ModeloBD.Productos" />
+          <EntitySet Name="UnidadesMedidasSet" EntityType="ModeloBD.UnidadesMedidas" />
+          <EntitySet Name="TipoEntradaSet" EntityType="ModeloBD.TipoEntrada" />
+          <EntitySet Name="CategoriasProductosSet" EntityType="ModeloBD.CategoriasProductos" />
+          <EntitySet Name="SubCategoriasProductosSet" EntityType="ModeloBD.SubCategoriasProductos" />
+          <EntitySet Name="MarcasProductosSet" EntityType="ModeloBD.MarcasProductos" />
+          <EntitySet Name="SalidasSet" EntityType="ModeloBD.Salidas" />
+          <EntitySet Name="TipoSalidaSet" EntityType="ModeloBD.TipoSalida" />
+          <EntitySet Name="Detalle_SalidasSet" EntityType="ModeloBD.Detalle_Salidas" />
+          <AssociationSet Name="EmpleadosEntradas" Association="ModeloBD.EmpleadosEntradas">
+            <End Role="Empleados" EntitySet="DatosUsuariosSet" />
+            <End Role="Entradas" EntitySet="EntradasSet" />
+          </AssociationSet>
+          <AssociationSet Name="TiendasEmpleados" Association="ModeloBD.TiendasEmpleados">
+            <End Role="Tiendas" EntitySet="TiendasSet" />
+            <End Role="Empleados" EntitySet="DatosUsuariosSet" />
+          </AssociationSet>
+          <AssociationSet Name="EmpleadosSalidas" Association="ModeloBD.EmpleadosSalidas">
+            <End Role="Empleados" EntitySet="DatosUsuariosSet" />
+            <End Role="Salidas" EntitySet="SalidasSet" />
+          </AssociationSet>
+          <AssociationSet Name="GeneroDatosUsuarios" Association="ModeloBD.GeneroDatosUsuarios">
+            <End Role="Genero" EntitySet="GeneroSet" />
+            <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+          </AssociationSet>
+          <AssociationSet Name="PaisesTipo_DocumentoIdentidad" Association="ModeloBD.PaisesTipo_DocumentoIdentidad">
+            <End Role="Paises" EntitySet="PaisesSet" />
+            <End Role="Tipo_DocumentoIdentidad" EntitySet="Tipo_DocumentoIdentidadSet" />
+          </AssociationSet>
+          <AssociationSet Name="TiendasNumerosTelefonicos" Association="ModeloBD.TiendasNumerosTelefonicos">
+            <End Role="Tiendas" EntitySet="TiendasSet" />
+            <End Role="NumerosTelefonicos" EntitySet="NumerosTelefonicosSet" />
+          </AssociationSet>
+          <AssociationSet Name="TiendasEntradas" Association="ModeloBD.TiendasEntradas">
+            <End Role="Tiendas" EntitySet="TiendasSet" />
+            <End Role="Entradas" EntitySet="EntradasSet" />
+          </AssociationSet>
+          <AssociationSet Name="EmpresaTelefonicaNumerosTelefonicos" Association="ModeloBD.EmpresaTelefonicaNumerosTelefonicos">
+            <End Role="EmpresasTelefonicas" EntitySet="EmpresasTelefonicasSet" />
+            <End Role="NumerosTelefonicos" EntitySet="NumerosTelefonicosSet" />
+          </AssociationSet>
+          <AssociationSet Name="DocumentoIdentidadDatosUsuarios" Association="ModeloBD.DocumentoIdentidadDatosUsuarios">
+            <End Role="DocumentoIdentidad" EntitySet="DocumentoIdentidadSet" />
+            <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+          </AssociationSet>
+          <AssociationSet Name="NumerosTelefonicosDatosUsuarios" Association="ModeloBD.NumerosTelefonicosDatosUsuarios">
+            <End Role="NumerosTelefonicos" EntitySet="NumerosTelefonicosSet" />
+            <End Role="DatosUsuarios" EntitySet="DatosUsuariosSet" />
+          </AssociationSet>
+          <AssociationSet Name="ClientesSalidas" Association="ModeloBD.ClientesSalidas">
+            <End Role="Clientes" EntitySet="DatosUsuariosSet" />
+            <End Role="Salidas" EntitySet="SalidasSet" />
+          </AssociationSet>
+          <AssociationSet Name="Tipo_DocumentoIdentidadDocumentoIdentidad" Association="ModeloBD.Tipo_DocumentoIdentidadDocumentoIdentidad">
+            <End Role="Tipo_DocumentoIdentidad" EntitySet="Tipo_DocumentoIdentidadSet" />
+            <End Role="DocumentoIdentidad" EntitySet="DocumentoIdentidadSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProveedoresEntradas" Association="ModeloBD.ProveedoresEntradas">
+            <End Role="Proveedores" EntitySet="ProveedoresSet" />
+            <End Role="Entradas" EntitySet="EntradasSet" />
+          </AssociationSet>
+          <AssociationSet Name="TipoEntradaEntradas" Association="ModeloBD.TipoEntradaEntradas">
+            <End Role="TipoEntrada" EntitySet="TipoEntradaSet" />
+            <End Role="Entradas" EntitySet="EntradasSet" />
+          </AssociationSet>
+          <AssociationSet Name="EntradasDetalle_Entrada" Association="ModeloBD.EntradasDetalle_Entrada">
+            <End Role="Entradas" EntitySet="EntradasSet" />
+            <End Role="Detalle_Entradas" EntitySet="Detalle_EntradasSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductosDetalle_Entrada" Association="ModeloBD.ProductosDetalle_Entrada">
+            <End Role="Productos" EntitySet="ProductosSet" />
+            <End Role="Detalle_Entradas" EntitySet="Detalle_EntradasSet" />
+          </AssociationSet>
+          <AssociationSet Name="UnidadesMedidasProductos" Association="ModeloBD.UnidadesMedidasProductos">
+            <End Role="UnidadesMedidas" EntitySet="UnidadesMedidasSet" />
+            <End Role="Productos" EntitySet="ProductosSet" />
+          </AssociationSet>
+          <AssociationSet Name="MarcasProductosProductos" Association="ModeloBD.MarcasProductosProductos">
+            <End Role="MarcasProductos" EntitySet="MarcasProductosSet" />
+            <End Role="Productos" EntitySet="ProductosSet" />
+          </AssociationSet>
+          <AssociationSet Name="SubCategoriasProductosProductos" Association="ModeloBD.SubCategoriasProductosProductos">
+            <End Role="SubCategoriasProductos" EntitySet="SubCategoriasProductosSet" />
+            <End Role="Productos" EntitySet="ProductosSet" />
+          </AssociationSet>
+          <AssociationSet Name="CategoriasProductosSubCategoriasProductos" Association="ModeloBD.CategoriasProductosSubCategoriasProductos">
+            <End Role="CategoriasProductos" EntitySet="CategoriasProductosSet" />
+            <End Role="SubCategoriasProductos" EntitySet="SubCategoriasProductosSet" />
+          </AssociationSet>
+          <AssociationSet Name="TipoSalidaSalidas" Association="ModeloBD.TipoSalidaSalidas">
+            <End Role="TipoSalida" EntitySet="TipoSalidaSet" />
+            <End Role="Salidas" EntitySet="SalidasSet" />
+          </AssociationSet>
+          <AssociationSet Name="SalidasDetalle_Salidas" Association="ModeloBD.SalidasDetalle_Salidas">
+            <End Role="Salidas" EntitySet="SalidasSet" />
+            <End Role="Detalle_Salidas" EntitySet="Detalle_SalidasSet" />
+          </AssociationSet>
+          <AssociationSet Name="ProductosDetalle_Salidas" Association="ModeloBD.ProductosDetalle_Salidas">
+            <End Role="Productos" EntitySet="ProductosSet" />
+            <End Role="Detalle_Salidas" EntitySet="Detalle_SalidasSet" />
+          </AssociationSet>
+          <AssociationSet Name="TiendasSalidas" Association="ModeloBD.TiendasSalidas">
+            <End Role="Tiendas" EntitySet="TiendasSet" />
+            <End Role="Salidas" EntitySet="SalidasSet" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Empleados" BaseType="ModeloBD.DatosUsuarios">
+          <Property Name="ID_Empleado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Empleado" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_Empleado" Type="String" Nullable="false" />
+          <Property Name="NO_INSS" Type="Int64" Nullable="false" />
+          <Property Name="Estado_Empleado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Entradas" Relationship="ModeloBD.EmpleadosEntradas" FromRole="Empleados" ToRole="Entradas" />
+          <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasEmpleados" FromRole="Empleados" ToRole="Tiendas" />
+          <NavigationProperty Name="Salidas" Relationship="ModeloBD.EmpleadosSalidas" FromRole="Empleados" ToRole="Salidas" />
+        </EntityType>
+        <EntityType Name="Genero">
+          <Key>
+            <PropertyRef Name="ID_Genero" />
+          </Key>
+          <Property Name="ID_Genero" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Genero" Type="Int64" Nullable="false" />
+          <Property Name="Descripcion_Genero" Type="String" Nullable="false" />
+          <NavigationProperty Name="DatosUsuarios" Relationship="ModeloBD.GeneroDatosUsuarios" FromRole="Genero" ToRole="DatosUsuarios" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="ID_Pais" />
+          </Key>
+          <Property Name="ID_Pais" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Pais" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_Pais" Type="String" Nullable="false" />
+          <Property Name="Nombre_Pais" Type="String" Nullable="false" />
+          <Property Name="Nacionalidad" Type="String" Nullable="false" />
+          <Property Name="Sufijo_Pais" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tipo_DocumentoIdentidad" Relationship="ModeloBD.PaisesTipo_DocumentoIdentidad" FromRole="Paises" ToRole="Tipo_DocumentoIdentidad" />
+        </EntityType>
+        <EntityType Name="Tiendas">
+          <Key>
+            <PropertyRef Name="ID_Tienda" />
+          </Key>
+          <Property Name="ID_Tienda" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Tienda" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_Tienda" Type="String" Nullable="false" />
+          <Property Name="Nombre_Tienda" Type="String" Nullable="false" />
+          <Property Name="Direccion_Tienda" Type="String" Nullable="false" />
+          <Property Name="ID_Ciudad" Type="Int64" Nullable="false" />
+          <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" />
+          <Property Name="ID_Entrada" Type="Int64" Nullable="false" />
+          <Property Name="ID_Empleado" Type="Int64" Nullable="false" />
+          <Property Name="ID_Salida" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="ModeloBD.TiendasEmpleados" FromRole="Tiendas" ToRole="Empleados" />
+          <NavigationProperty Name="NumerosTelefonicos" Relationship="ModeloBD.TiendasNumerosTelefonicos" FromRole="Tiendas" ToRole="NumerosTelefonicos" />
+          <NavigationProperty Name="Entradas" Relationship="ModeloBD.TiendasEntradas" FromRole="Tiendas" ToRole="Entradas" />
+          <NavigationProperty Name="Salidas" Relationship="ModeloBD.TiendasSalidas" FromRole="Tiendas" ToRole="Salidas" />
+        </EntityType>
+        <EntityType Name="NumerosTelefonicos">
+          <Key>
+            <PropertyRef Name="ID_NumTelefono" />
+          </Key>
+          <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroTelefono" Type="String" Nullable="false" />
+          <Property Name="ID_EmpresaTelefonica" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasNumerosTelefonicos" FromRole="NumerosTelefonicos" ToRole="Tiendas" />
+          <NavigationProperty Name="EmpresaTelefonica" Relationship="ModeloBD.EmpresaTelefonicaNumerosTelefonicos" FromRole="NumerosTelefonicos" ToRole="EmpresasTelefonicas" />
+          <NavigationProperty Name="DatosUsuarios" Relationship="ModeloBD.NumerosTelefonicosDatosUsuarios" FromRole="NumerosTelefonicos" ToRole="DatosUsuarios" />
+        </EntityType>
+        <EntityType Name="EmpresasTelefonicas">
+          <Key>
+            <PropertyRef Name="ID_EmpresaTelefonica" />
+          </Key>
+          <Property Name="ID_EmpresaTelefonica" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_EmpresaTelefonica" Type="Int64" Nullable="false" />
+          <Property Name="Nombre_EmpresaTelefonica" Type="String" Nullable="false" />
+          <NavigationProperty Name="NumerosTelefonicos" Relationship="ModeloBD.EmpresaTelefonicaNumerosTelefonicos" FromRole="EmpresasTelefonicas" ToRole="NumerosTelefonicos" />
+        </EntityType>
+        <EntityType Name="DatosUsuarios">
+          <Key>
+            <PropertyRef Name="ID_DatoUsuario" />
+          </Key>
+          <Property Name="ID_DatoUsuario" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrimerNombre" Type="String" Nullable="false" />
+          <Property Name="SegundoNombre" Type="String" Nullable="false" />
+          <Property Name="PrimerApellido" Type="String" Nullable="false" />
+          <Property Name="SegundoApellido" Type="String" Nullable="false" />
+          <Property Name="Edad" Type="Int16" Nullable="false" />
+          <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" />
+          <Property Name="ID_Genero" Type="Int64" Nullable="false" />
+          <Property Name="ID_DocumentoIdentidad" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Genero" Relationship="ModeloBD.GeneroDatosUsuarios" FromRole="DatosUsuarios" ToRole="Genero" />
+          <NavigationProperty Name="DocumentoIdentidad" Relationship="ModeloBD.DocumentoIdentidadDatosUsuarios" FromRole="DatosUsuarios" ToRole="DocumentoIdentidad" />
+          <NavigationProperty Name="NumerosTelefonicos" Relationship="ModeloBD.NumerosTelefonicosDatosUsuarios" FromRole="DatosUsuarios" ToRole="NumerosTelefonicos" />
+        </EntityType>
+        <EntityType Name="Clientes" BaseType="ModeloBD.DatosUsuarios">
+          <Property Name="ID_Cliente" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Cliente" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Salidas" Relationship="ModeloBD.ClientesSalidas" FromRole="Clientes" ToRole="Salidas" />
+        </EntityType>
+        <EntityType Name="Tipo_DocumentoIdentidad">
+          <Key>
+            <PropertyRef Name="ID_TipoDocumentoIdentidad" />
+          </Key>
+          <Property Name="ID_TipoDocumentoIdentidad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_TipoDocumentoIdentidad" Type="String" Nullable="false" />
+          <Property Name="Descripcion_TipoDocumentoIdentidad" Type="String" Nullable="false" />
+          <Property Name="ID_Pais" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Paises" Relationship="ModeloBD.PaisesTipo_DocumentoIdentidad" FromRole="Tipo_DocumentoIdentidad" ToRole="Paises" />
+          <NavigationProperty Name="DocumentoIdentidad" Relationship="ModeloBD.Tipo_DocumentoIdentidadDocumentoIdentidad" FromRole="Tipo_DocumentoIdentidad" ToRole="DocumentoIdentidad" />
+        </EntityType>
+        <EntityType Name="DocumentoIdentidad">
+          <Key>
+            <PropertyRef Name="ID_DocumentoIdentidad" />
+          </Key>
+          <Property Name="ID_DocumentoIdentidad" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo_DocumentoIdentidad" Type="String" Nullable="false" />
+          <Property Name="FechaEmision_DocumentoIdentidad" Type="DateTime" Nullable="false" />
+          <Property Name="FechaFinalizacion_DocumentoIdentidad" Type="DateTime" Nullable="false" />
+          <Property Name="ID_TipoDocumentoIdentidad" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="DatosUsuarios" Relationship="ModeloBD.DocumentoIdentidadDatosUsuarios" FromRole="DocumentoIdentidad" ToRole="DatosUsuarios" />
+          <NavigationProperty Name="Tipo_DocumentoIdentidad" Relationship="ModeloBD.Tipo_DocumentoIdentidadDocumentoIdentidad" FromRole="DocumentoIdentidad" ToRole="Tipo_DocumentoIdentidad" />
+        </EntityType>
+        <EntityType Name="Entradas">
+          <Key>
+            <PropertyRef Name="ID_Entrada" />
+          </Key>
+          <Property Name="ID_Entrada" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Entrada" Type="Int64" Nullable="false" />
+          <Property Name="CodigoEntrada" Type="String" Nullable="false" />
+          <Property Name="FechaEntrada" Type="DateTime" Nullable="false" />
+          <Property Name="ID_Proveedor" Type="Int64" Nullable="false" />
+          <Property Name="ID_TipoEntrada" Type="Int64" Nullable="false" />
+          <Property Name="ID_PagoEntrada" Type="Int64" Nullable="false" />
+          <Property Name="ID_Empleado" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="ModeloBD.EmpleadosEntradas" FromRole="Entradas" ToRole="Empleados" />
+          <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasEntradas" FromRole="Entradas" ToRole="Tiendas" />
+          <NavigationProperty Name="Proveedores" Relationship="ModeloBD.ProveedoresEntradas" FromRole="Entradas" ToRole="Proveedores" />
+          <NavigationProperty Name="TipoEntrada" Relationship="ModeloBD.TipoEntradaEntradas" FromRole="Entradas" ToRole="TipoEntrada" />
+          <NavigationProperty Name="Detalle_Entrada" Relationship="ModeloBD.EntradasDetalle_Entrada" FromRole="Entradas" ToRole="Detalle_Entradas" />
+        </EntityType>
+        <EntityType Name="Detalle_Entradas">
+          <Key>
+            <PropertyRef Name="ID_DetalleEntrada" />
+          </Key>
+          <Property Name="ID_DetalleEntrada" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cantidad_DetalleEntrada" Type="Int64" Nullable="false" />
+          <Property Name="Precio_DetalleEntrada" Type="Int64" Nullable="false" />
+          <Property Name="ID_Entrada" Type="Int64" Nullable="false" />
+          <Property Name="ID_Producto" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Entradas" Relationship="ModeloBD.EntradasDetalle_Entrada" FromRole="Detalle_Entradas" ToRole="Entradas" />
+          <NavigationProperty Name="Productos" Relationship="ModeloBD.ProductosDetalle_Entrada" FromRole="Detalle_Entradas" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="ID_Proveedor" />
+          </Key>
+          <Property Name="ID_Proveedor" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RazonSocial" Type="String" Nullable="false" />
+          <Property Name="CodigoTributario" Type="String" Nullable="false" />
+          <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Entradas" Relationship="ModeloBD.ProveedoresEntradas" FromRole="Proveedores" ToRole="Entradas" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="ID_Producto" />
+          </Key>
+          <Property Name="ID_Producto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo_Producto" Type="String" Nullable="false" />
+          <Property Name="Nombre_Producto" Type="String" Nullable="false" />
+          <Property Name="ID_MarcaProducto" Type="Int64" Nullable="false" />
+          <Property Name="ID_UnidadMedida" Type="Int64" Nullable="false" />
+          <Property Name="ID_SubCategoriaProducto" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Detalle_Entrada" Relationship="ModeloBD.ProductosDetalle_Entrada" FromRole="Productos" ToRole="Detalle_Entradas" />
+          <NavigationProperty Name="UnidadesMedidas" Relationship="ModeloBD.UnidadesMedidasProductos" FromRole="Productos" ToRole="UnidadesMedidas" />
+          <NavigationProperty Name="MarcasProductos" Relationship="ModeloBD.MarcasProductosProductos" FromRole="Productos" ToRole="MarcasProductos" />
+          <NavigationProperty Name="SubCategoriasProductos" Relationship="ModeloBD.SubCategoriasProductosProductos" FromRole="Productos" ToRole="SubCategoriasProductos" />
+          <NavigationProperty Name="Detalle_Salidas" Relationship="ModeloBD.ProductosDetalle_Salidas" FromRole="Productos" ToRole="Detalle_Salidas" />
+        </EntityType>
+        <EntityType Name="UnidadesMedidas">
+          <Key>
+            <PropertyRef Name="ID_UnidadMedida" />
+          </Key>
+          <Property Name="ID_UnidadMedida" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_UnidadMedidad" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_UnidadMedida" Type="String" Nullable="false" />
+          <Property Name="Abreviatura_UnidadMedida" Type="String" Nullable="false" />
+          <Property Name="Descripcion_UnidadMedida" Type="String" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="ModeloBD.UnidadesMedidasProductos" FromRole="UnidadesMedidas" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="TipoEntrada">
+          <Key>
+            <PropertyRef Name="ID_TipoEntrada" />
+          </Key>
+          <Property Name="ID_TipoEntrada" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_TipoEntrada" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_TipoEntrada" Type="String" Nullable="false" />
+          <Property Name="Descripcion_TipoEntrada" Type="String" Nullable="false" />
+          <NavigationProperty Name="Entradas" Relationship="ModeloBD.TipoEntradaEntradas" FromRole="TipoEntrada" ToRole="Entradas" />
+        </EntityType>
+        <EntityType Name="CategoriasProductos">
+          <Key>
+            <PropertyRef Name="ID_CategoriaProducto" />
+          </Key>
+          <Property Name="ID_CategoriaProducto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_CategoriaProducto" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_CategoriaProducto" Type="String" Nullable="false" />
+          <Property Name="Descripcion_CategoriaProducto" Type="String" Nullable="false" />
+          <NavigationProperty Name="SubCategoriasProductos" Relationship="ModeloBD.CategoriasProductosSubCategoriasProductos" FromRole="CategoriasProductos" ToRole="SubCategoriasProductos" />
+        </EntityType>
+        <EntityType Name="SubCategoriasProductos">
+          <Key>
+            <PropertyRef Name="ID_SubCategoriaProducto" />
+          </Key>
+          <Property Name="ID_SubCategoriaProducto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_SubCategoriaProducto" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_SubCategoriaProducto" Type="String" Nullable="false" />
+          <Property Name="Descripcion_SubCategoriaProducto" Type="String" Nullable="false" />
+          <Property Name="ID_CategoriaProducto" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="ModeloBD.SubCategoriasProductosProductos" FromRole="SubCategoriasProductos" ToRole="Productos" />
+          <NavigationProperty Name="CategoriasProductos" Relationship="ModeloBD.CategoriasProductosSubCategoriasProductos" FromRole="SubCategoriasProductos" ToRole="CategoriasProductos" />
+        </EntityType>
+        <EntityType Name="MarcasProductos">
+          <Key>
+            <PropertyRef Name="ID_MarcaProducto" />
+          </Key>
+          <Property Name="ID_MarcaProducto" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_MarcaProducto" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_MarcaProducto" Type="String" Nullable="false" />
+          <Property Name="Nombre_MarcaProducto" Type="String" Nullable="false" />
+          <Property Name="Web_MarcaProducto" Type="String" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="ModeloBD.MarcasProductosProductos" FromRole="MarcasProductos" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Salidas">
+          <Key>
+            <PropertyRef Name="ID_Salida" />
+          </Key>
+          <Property Name="ID_Salida" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_Salida" Type="Int64" Nullable="false" />
+          <Property Name="CodigoSalida" Type="String" Nullable="false" />
+          <Property Name="FechaSalida" Type="DateTime" Nullable="false" />
+          <Property Name="ID_TipoSalida" Type="Int64" Nullable="false" />
+          <Property Name="ID_Empleado" Type="Int64" Nullable="false" />
+          <Property Name="ID_Cliente" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="ModeloBD.EmpleadosSalidas" FromRole="Salidas" ToRole="Empleados" />
+          <NavigationProperty Name="Clientes" Relationship="ModeloBD.ClientesSalidas" FromRole="Salidas" ToRole="Clientes" />
+          <NavigationProperty Name="TipoSalida" Relationship="ModeloBD.TipoSalidaSalidas" FromRole="Salidas" ToRole="TipoSalida" />
+          <NavigationProperty Name="Detalle_Salidas" Relationship="ModeloBD.SalidasDetalle_Salidas" FromRole="Salidas" ToRole="Detalle_Salidas" />
+          <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasSalidas" FromRole="Salidas" ToRole="Tiendas" />
+        </EntityType>
+        <EntityType Name="TipoSalida">
+          <Key>
+            <PropertyRef Name="ID_TipoSalida" />
+          </Key>
+          <Property Name="ID_TipoSalida" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NO_TipoSalida" Type="Int64" Nullable="false" />
+          <Property Name="Codigo_TipoSalida" Type="String" Nullable="false" />
+          <Property Name="Descripcion_TipoSalida" Type="String" Nullable="false" />
+          <NavigationProperty Name="Salidas" Relationship="ModeloBD.TipoSalidaSalidas" FromRole="TipoSalida" ToRole="Salidas" />
+        </EntityType>
+        <EntityType Name="Detalle_Salidas">
+          <Key>
+            <PropertyRef Name="ID_DetalleSalida" />
+          </Key>
+          <Property Name="ID_DetalleSalida" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cantidad_DetalleSalida" Type="Int64" Nullable="false" />
+          <Property Name="Precio_DetalleSalida" Type="Int64" Nullable="false" />
+          <Property Name="ID_Salida" Type="Int64" Nullable="false" />
+          <Property Name="ID_Producto" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Salidas" Relationship="ModeloBD.SalidasDetalle_Salidas" FromRole="Detalle_Salidas" ToRole="Salidas" />
+          <NavigationProperty Name="Productos" Relationship="ModeloBD.ProductosDetalle_Salidas" FromRole="Detalle_Salidas" ToRole="Productos" />
+        </EntityType>
+        <Association Name="EmpleadosEntradas">
+          <End Type="ModeloBD.Empleados" Role="Empleados" Multiplicity="1" />
+          <End Type="ModeloBD.Entradas" Role="Entradas" Multiplicity="*" />
+        </Association>
+        <Association Name="TiendasEmpleados">
+          <End Type="ModeloBD.Tiendas" Role="Tiendas" Multiplicity="1" />
+          <End Type="ModeloBD.Empleados" Role="Empleados" Multiplicity="*" />
+        </Association>
+        <Association Name="EmpleadosSalidas">
+          <End Type="ModeloBD.Empleados" Role="Empleados" Multiplicity="1" />
+          <End Type="ModeloBD.Salidas" Role="Salidas" Multiplicity="*" />
+        </Association>
+        <Association Name="GeneroDatosUsuarios">
+          <End Type="ModeloBD.Genero" Role="Genero" Multiplicity="1" />
+          <End Type="ModeloBD.DatosUsuarios" Role="DatosUsuarios" Multiplicity="*" />
+        </Association>
+        <Association Name="PaisesTipo_DocumentoIdentidad">
+          <End Type="ModeloBD.Paises" Role="Paises" Multiplicity="1" />
+          <End Type="ModeloBD.Tipo_DocumentoIdentidad" Role="Tipo_DocumentoIdentidad" Multiplicity="*" />
+        </Association>
+        <Association Name="TiendasNumerosTelefonicos">
+          <End Type="ModeloBD.Tiendas" Role="Tiendas" Multiplicity="1" />
+          <End Type="ModeloBD.NumerosTelefonicos" Role="NumerosTelefonicos" Multiplicity="*" />
+        </Association>
+        <Association Name="TiendasEntradas">
+          <End Type="ModeloBD.Tiendas" Role="Tiendas" Multiplicity="1" />
+          <End Type="ModeloBD.Entradas" Role="Entradas" Multiplicity="*" />
+        </Association>
+        <Association Name="EmpresaTelefonicaNumerosTelefonicos">
+          <End Type="ModeloBD.EmpresasTelefonicas" Role="EmpresasTelefonicas" Multiplicity="1" />
+          <End Type="ModeloBD.NumerosTelefonicos" Role="NumerosTelefonicos" Multiplicity="*" />
+        </Association>
+        <Association Name="DocumentoIdentidadDatosUsuarios">
+          <End Type="ModeloBD.DocumentoIdentidad" Role="DocumentoIdentidad" Multiplicity="1" />
+          <End Type="ModeloBD.DatosUsuarios" Role="DatosUsuarios" Multiplicity="1" />
+        </Association>
+        <Association Name="NumerosTelefonicosDatosUsuarios">
+          <End Type="ModeloBD.NumerosTelefonicos" Role="NumerosTelefonicos" Multiplicity="1" />
+          <End Type="ModeloBD.DatosUsuarios" Role="DatosUsuarios" Multiplicity="1" />
+        </Association>
+        <Association Name="ClientesSalidas">
+          <End Type="ModeloBD.Clientes" Role="Clientes" Multiplicity="1" />
+          <End Type="ModeloBD.Salidas" Role="Salidas" Multiplicity="*" />
+        </Association>
+        <Association Name="Tipo_DocumentoIdentidadDocumentoIdentidad">
+          <End Type="ModeloBD.Tipo_DocumentoIdentidad" Role="Tipo_DocumentoIdentidad" Multiplicity="1" />
+          <End Type="ModeloBD.DocumentoIdentidad" Role="DocumentoIdentidad" Multiplicity="*" />
+        </Association>
+        <Association Name="ProveedoresEntradas">
+          <End Type="ModeloBD.Proveedores" Role="Proveedores" Multiplicity="1" />
+          <End Type="ModeloBD.Entradas" Role="Entradas" Multiplicity="*" />
+        </Association>
+        <Association Name="TipoEntradaEntradas">
+          <End Type="ModeloBD.TipoEntrada" Role="TipoEntrada" Multiplicity="1" />
+          <End Type="ModeloBD.Entradas" Role="Entradas" Multiplicity="*" />
+        </Association>
+        <Association Name="EntradasDetalle_Entrada">
+          <End Type="ModeloBD.Entradas" Role="Entradas" Multiplicity="1" />
+          <End Type="ModeloBD.Detalle_Entradas" Role="Detalle_Entradas" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductosDetalle_Entrada">
+          <End Type="ModeloBD.Productos" Role="Productos" Multiplicity="1" />
+          <End Type="ModeloBD.Detalle_Entradas" Role="Detalle_Entradas" Multiplicity="*" />
+        </Association>
+        <Association Name="UnidadesMedidasProductos">
+          <End Type="ModeloBD.UnidadesMedidas" Role="UnidadesMedidas" Multiplicity="1" />
+          <End Type="ModeloBD.Productos" Role="Productos" Multiplicity="*" />
+        </Association>
+        <Association Name="MarcasProductosProductos">
+          <End Type="ModeloBD.MarcasProductos" Role="MarcasProductos" Multiplicity="1" />
+          <End Type="ModeloBD.Productos" Role="Productos" Multiplicity="*" />
+        </Association>
+        <Association Name="SubCategoriasProductosProductos">
+          <End Type="ModeloBD.SubCategoriasProductos" Role="SubCategoriasProductos" Multiplicity="1" />
+          <End Type="ModeloBD.Productos" Role="Productos" Multiplicity="*" />
+        </Association>
+        <Association Name="CategoriasProductosSubCategoriasProductos">
+          <End Type="ModeloBD.CategoriasProductos" Role="CategoriasProductos" Multiplicity="1" />
+          <End Type="ModeloBD.SubCategoriasProductos" Role="SubCategoriasProductos" Multiplicity="*" />
+        </Association>
+        <Association Name="TipoSalidaSalidas">
+          <End Type="ModeloBD.TipoSalida" Role="TipoSalida" Multiplicity="1" />
+          <End Type="ModeloBD.Salidas" Role="Salidas" Multiplicity="*" />
+        </Association>
+        <Association Name="SalidasDetalle_Salidas">
+          <End Type="ModeloBD.Salidas" Role="Salidas" Multiplicity="1" />
+          <End Type="ModeloBD.Detalle_Salidas" Role="Detalle_Salidas" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductosDetalle_Salidas">
+          <End Type="ModeloBD.Productos" Role="Productos" Multiplicity="1" />
+          <End Type="ModeloBD.Detalle_Salidas" Role="Detalle_Salidas" Multiplicity="*" />
+        </Association>
+        <Association Name="TiendasSalidas">
+          <End Type="ModeloBD.Tiendas" Role="Tiendas" Multiplicity="1" />
+          <End Type="ModeloBD.Salidas" Role="Salidas" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloBDStoreContainer" CdmEntityContainer="ModeloBDContainer">
+    <EntitySetMapping Name="GeneroSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Genero)">
+        <MappingFragment StoreEntitySet="GeneroSet">
+          <ScalarProperty Name="ID_Genero" ColumnName="ID_Genero" />
+          <ScalarProperty Name="NO_Genero" ColumnName="NO_Genero" />
+          <ScalarProperty Name="Descripcion_Genero" ColumnName="Descripcion_Genero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaisesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Paises)">
+        <MappingFragment StoreEntitySet="PaisesSet">
+          <ScalarProperty Name="ID_Pais" ColumnName="ID_Pais" />
+          <ScalarProperty Name="NO_Pais" ColumnName="NO_Pais" />
+          <ScalarProperty Name="Codigo_Pais" ColumnName="Codigo_Pais" />
+          <ScalarProperty Name="Nombre_Pais" ColumnName="Nombre_Pais" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Sufijo_Pais" ColumnName="Sufijo_Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiendasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Tiendas)">
+        <MappingFragment StoreEntitySet="TiendasSet">
+          <ScalarProperty Name="ID_Tienda" ColumnName="ID_Tienda" />
+          <ScalarProperty Name="NO_Tienda" ColumnName="NO_Tienda" />
+          <ScalarProperty Name="Codigo_Tienda" ColumnName="Codigo_Tienda" />
+          <ScalarProperty Name="Nombre_Tienda" ColumnName="Nombre_Tienda" />
+          <ScalarProperty Name="Direccion_Tienda" ColumnName="Direccion_Tienda" />
+          <ScalarProperty Name="ID_Ciudad" ColumnName="ID_Ciudad" />
+          <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+          <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+          <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+          <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NumerosTelefonicosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.NumerosTelefonicos)">
+        <MappingFragment StoreEntitySet="NumerosTelefonicosSet">
+          <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+          <ScalarProperty Name="NumeroTelefono" ColumnName="NumeroTelefono" />
+          <ScalarProperty Name="ID_EmpresaTelefonica" ColumnName="ID_EmpresaTelefonica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpresasTelefonicasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.EmpresasTelefonicas)">
+        <MappingFragment StoreEntitySet="EmpresasTelefonicasSet">
+          <ScalarProperty Name="ID_EmpresaTelefonica" ColumnName="ID_EmpresaTelefonica" />
+          <ScalarProperty Name="NO_EmpresaTelefonica" ColumnName="NO_EmpresaTelefonica" />
+          <ScalarProperty Name="Nombre_EmpresaTelefonica" ColumnName="Nombre_EmpresaTelefonica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DatosUsuariosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.DatosUsuarios)">
+        <MappingFragment StoreEntitySet="DatosUsuariosSet">
+          <ScalarProperty Name="ID_DatoUsuario" ColumnName="ID_DatoUsuario" />
+          <ScalarProperty Name="PrimerNombre" ColumnName="PrimerNombre" />
+          <ScalarProperty Name="SegundoNombre" ColumnName="SegundoNombre" />
+          <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+          <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+          <ScalarProperty Name="ID_Genero" ColumnName="ID_Genero" />
+          <ScalarProperty Name="ID_DocumentoIdentidad" ColumnName="ID_DocumentoIdentidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Empleados)">
+        <MappingFragment StoreEntitySet="DatosUsuariosSet_Empleados">
+          <ScalarProperty Name="ID_DatoUsuario" ColumnName="ID_DatoUsuario" />
+          <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+          <ScalarProperty Name="NO_Empleado" ColumnName="NO_Empleado" />
+          <ScalarProperty Name="Codigo_Empleado" ColumnName="Codigo_Empleado" />
+          <ScalarProperty Name="NO_INSS" ColumnName="NO_INSS" />
+          <ScalarProperty Name="Estado_Empleado" ColumnName="Estado_Empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Clientes)">
+        <MappingFragment StoreEntitySet="DatosUsuariosSet_Clientes">
+          <ScalarProperty Name="ID_DatoUsuario" ColumnName="ID_DatoUsuario" />
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+          <ScalarProperty Name="NO_Cliente" ColumnName="NO_Cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_DocumentoIdentidadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Tipo_DocumentoIdentidad)">
+        <MappingFragment StoreEntitySet="Tipo_DocumentoIdentidadSet">
+          <ScalarProperty Name="ID_TipoDocumentoIdentidad" ColumnName="ID_TipoDocumentoIdentidad" />
+          <ScalarProperty Name="NO_TipoDocumentoIdentidad" ColumnName="NO_TipoDocumentoIdentidad" />
+          <ScalarProperty Name="Descripcion_TipoDocumentoIdentidad" ColumnName="Descripcion_TipoDocumentoIdentidad" />
+          <ScalarProperty Name="ID_Pais" ColumnName="ID_Pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentoIdentidadSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.DocumentoIdentidad)">
+        <MappingFragment StoreEntitySet="DocumentoIdentidadSet">
+          <ScalarProperty Name="ID_DocumentoIdentidad" ColumnName="ID_DocumentoIdentidad" />
+          <ScalarProperty Name="Codigo_DocumentoIdentidad" ColumnName="Codigo_DocumentoIdentidad" />
+          <ScalarProperty Name="FechaEmision_DocumentoIdentidad" ColumnName="FechaEmision_DocumentoIdentidad" />
+          <ScalarProperty Name="FechaFinalizacion_DocumentoIdentidad" ColumnName="FechaFinalizacion_DocumentoIdentidad" />
+          <ScalarProperty Name="ID_TipoDocumentoIdentidad" ColumnName="ID_TipoDocumentoIdentidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntradasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Entradas)">
+        <MappingFragment StoreEntitySet="EntradasSet">
+          <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+          <ScalarProperty Name="NO_Entrada" ColumnName="NO_Entrada" />
+          <ScalarProperty Name="CodigoEntrada" ColumnName="CodigoEntrada" />
+          <ScalarProperty Name="FechaEntrada" ColumnName="FechaEntrada" />
+          <ScalarProperty Name="ID_Proveedor" ColumnName="ID_Proveedor" />
+          <ScalarProperty Name="ID_TipoEntrada" ColumnName="ID_TipoEntrada" />
+          <ScalarProperty Name="ID_PagoEntrada" ColumnName="ID_PagoEntrada" />
+          <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_EntradasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Detalle_Entradas)">
+        <MappingFragment StoreEntitySet="Detalle_EntradasSet">
+          <ScalarProperty Name="ID_DetalleEntrada" ColumnName="ID_DetalleEntrada" />
+          <ScalarProperty Name="Cantidad_DetalleEntrada" ColumnName="Cantidad_DetalleEntrada" />
+          <ScalarProperty Name="Precio_DetalleEntrada" ColumnName="Precio_DetalleEntrada" />
+          <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+          <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProveedoresSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Proveedores)">
+        <MappingFragment StoreEntitySet="ProveedoresSet">
+          <ScalarProperty Name="ID_Proveedor" ColumnName="ID_Proveedor" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="CodigoTributario" ColumnName="CodigoTributario" />
+          <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Productos)">
+        <MappingFragment StoreEntitySet="ProductosSet">
+          <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+          <ScalarProperty Name="Codigo_Producto" ColumnName="Codigo_Producto" />
+          <ScalarProperty Name="Nombre_Producto" ColumnName="Nombre_Producto" />
+          <ScalarProperty Name="ID_MarcaProducto" ColumnName="ID_MarcaProducto" />
+          <ScalarProperty Name="ID_UnidadMedida" ColumnName="ID_UnidadMedida" />
+          <ScalarProperty Name="ID_SubCategoriaProducto" ColumnName="ID_SubCategoriaProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnidadesMedidasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.UnidadesMedidas)">
+        <MappingFragment StoreEntitySet="UnidadesMedidasSet">
+          <ScalarProperty Name="ID_UnidadMedida" ColumnName="ID_UnidadMedida" />
+          <ScalarProperty Name="NO_UnidadMedidad" ColumnName="NO_UnidadMedidad" />
+          <ScalarProperty Name="Codigo_UnidadMedida" ColumnName="Codigo_UnidadMedida" />
+          <ScalarProperty Name="Abreviatura_UnidadMedida" ColumnName="Abreviatura_UnidadMedida" />
+          <ScalarProperty Name="Descripcion_UnidadMedida" ColumnName="Descripcion_UnidadMedida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoEntradaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.TipoEntrada)">
+        <MappingFragment StoreEntitySet="TipoEntradaSet">
+          <ScalarProperty Name="ID_TipoEntrada" ColumnName="ID_TipoEntrada" />
+          <ScalarProperty Name="NO_TipoEntrada" ColumnName="NO_TipoEntrada" />
+          <ScalarProperty Name="Codigo_TipoEntrada" ColumnName="Codigo_TipoEntrada" />
+          <ScalarProperty Name="Descripcion_TipoEntrada" ColumnName="Descripcion_TipoEntrada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriasProductosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.CategoriasProductos)">
+        <MappingFragment StoreEntitySet="CategoriasProductosSet">
+          <ScalarProperty Name="ID_CategoriaProducto" ColumnName="ID_CategoriaProducto" />
+          <ScalarProperty Name="NO_CategoriaProducto" ColumnName="NO_CategoriaProducto" />
+          <ScalarProperty Name="Codigo_CategoriaProducto" ColumnName="Codigo_CategoriaProducto" />
+          <ScalarProperty Name="Descripcion_CategoriaProducto" ColumnName="Descripcion_CategoriaProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategoriasProductosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.SubCategoriasProductos)">
+        <MappingFragment StoreEntitySet="SubCategoriasProductosSet">
+          <ScalarProperty Name="ID_SubCategoriaProducto" ColumnName="ID_SubCategoriaProducto" />
+          <ScalarProperty Name="NO_SubCategoriaProducto" ColumnName="NO_SubCategoriaProducto" />
+          <ScalarProperty Name="Codigo_SubCategoriaProducto" ColumnName="Codigo_SubCategoriaProducto" />
+          <ScalarProperty Name="Descripcion_SubCategoriaProducto" ColumnName="Descripcion_SubCategoriaProducto" />
+          <ScalarProperty Name="ID_CategoriaProducto" ColumnName="ID_CategoriaProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarcasProductosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.MarcasProductos)">
+        <MappingFragment StoreEntitySet="MarcasProductosSet">
+          <ScalarProperty Name="ID_MarcaProducto" ColumnName="ID_MarcaProducto" />
+          <ScalarProperty Name="NO_MarcaProducto" ColumnName="NO_MarcaProducto" />
+          <ScalarProperty Name="Codigo_MarcaProducto" ColumnName="Codigo_MarcaProducto" />
+          <ScalarProperty Name="Nombre_MarcaProducto" ColumnName="Nombre_MarcaProducto" />
+          <ScalarProperty Name="Web_MarcaProducto" ColumnName="Web_MarcaProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalidasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Salidas)">
+        <MappingFragment StoreEntitySet="SalidasSet">
+          <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+          <ScalarProperty Name="NO_Salida" ColumnName="NO_Salida" />
+          <ScalarProperty Name="CodigoSalida" ColumnName="CodigoSalida" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="ID_TipoSalida" ColumnName="ID_TipoSalida" />
+          <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
+          <ScalarProperty Name="ID_Cliente" ColumnName="ID_Cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoSalidaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.TipoSalida)">
+        <MappingFragment StoreEntitySet="TipoSalidaSet">
+          <ScalarProperty Name="ID_TipoSalida" ColumnName="ID_TipoSalida" />
+          <ScalarProperty Name="NO_TipoSalida" ColumnName="NO_TipoSalida" />
+          <ScalarProperty Name="Codigo_TipoSalida" ColumnName="Codigo_TipoSalida" />
+          <ScalarProperty Name="Descripcion_TipoSalida" ColumnName="Descripcion_TipoSalida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalle_SalidasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Detalle_Salidas)">
+        <MappingFragment StoreEntitySet="Detalle_SalidasSet">
+          <ScalarProperty Name="ID_DetalleSalida" ColumnName="ID_DetalleSalida" />
+          <ScalarProperty Name="Cantidad_DetalleSalida" ColumnName="Cantidad_DetalleSalida" />
+          <ScalarProperty Name="Precio_DetalleSalida" ColumnName="Precio_DetalleSalida" />
+          <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+          <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="EmpleadosEntradas" TypeName="ModeloBD.EmpleadosEntradas" StoreEntitySet="EntradasSet">
+      <EndProperty Name="Empleados">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="Empleados_ID_DatoUsuario" />
+      </EndProperty>
+      <EndProperty Name="Entradas">
+        <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TiendasEmpleados" TypeName="ModeloBD.TiendasEmpleados" StoreEntitySet="DatosUsuariosSet_Empleados">
+      <EndProperty Name="Tiendas">
+        <ScalarProperty Name="ID_Tienda" ColumnName="Tiendas_ID_Tienda" />
+      </EndProperty>
+      <EndProperty Name="Empleados">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="ID_DatoUsuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmpleadosSalidas" TypeName="ModeloBD.EmpleadosSalidas" StoreEntitySet="SalidasSet">
+      <EndProperty Name="Empleados">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="Empleados_ID_DatoUsuario" />
+      </EndProperty>
+      <EndProperty Name="Salidas">
+        <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="GeneroDatosUsuarios" TypeName="ModeloBD.GeneroDatosUsuarios" StoreEntitySet="DatosUsuariosSet">
+      <EndProperty Name="Genero">
+        <ScalarProperty Name="ID_Genero" ColumnName="Genero_ID_Genero" />
+      </EndProperty>
+      <EndProperty Name="DatosUsuarios">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="ID_DatoUsuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PaisesTipo_DocumentoIdentidad" TypeName="ModeloBD.PaisesTipo_DocumentoIdentidad" StoreEntitySet="Tipo_DocumentoIdentidadSet">
+      <EndProperty Name="Paises">
+        <ScalarProperty Name="ID_Pais" ColumnName="Paises_ID_Pais" />
+      </EndProperty>
+      <EndProperty Name="Tipo_DocumentoIdentidad">
+        <ScalarProperty Name="ID_TipoDocumentoIdentidad" ColumnName="ID_TipoDocumentoIdentidad" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TiendasNumerosTelefonicos" TypeName="ModeloBD.TiendasNumerosTelefonicos" StoreEntitySet="NumerosTelefonicosSet">
+      <EndProperty Name="Tiendas">
+        <ScalarProperty Name="ID_Tienda" ColumnName="Tiendas_ID_Tienda" />
+      </EndProperty>
+      <EndProperty Name="NumerosTelefonicos">
+        <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TiendasEntradas" TypeName="ModeloBD.TiendasEntradas" StoreEntitySet="EntradasSet">
+      <EndProperty Name="Tiendas">
+        <ScalarProperty Name="ID_Tienda" ColumnName="Tiendas_ID_Tienda" />
+      </EndProperty>
+      <EndProperty Name="Entradas">
+        <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EmpresaTelefonicaNumerosTelefonicos" TypeName="ModeloBD.EmpresaTelefonicaNumerosTelefonicos" StoreEntitySet="NumerosTelefonicosSet">
+      <EndProperty Name="EmpresasTelefonicas">
+        <ScalarProperty Name="ID_EmpresaTelefonica" ColumnName="EmpresaTelefonica_ID_EmpresaTelefonica" />
+      </EndProperty>
+      <EndProperty Name="NumerosTelefonicos">
+        <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DocumentoIdentidadDatosUsuarios" TypeName="ModeloBD.DocumentoIdentidadDatosUsuarios" StoreEntitySet="DocumentoIdentidadSet">
+      <EndProperty Name="DatosUsuarios">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="DatosUsuarios_ID_DatoUsuario" />
+      </EndProperty>
+      <EndProperty Name="DocumentoIdentidad">
+        <ScalarProperty Name="ID_DocumentoIdentidad" ColumnName="ID_DocumentoIdentidad" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="NumerosTelefonicosDatosUsuarios" TypeName="ModeloBD.NumerosTelefonicosDatosUsuarios" StoreEntitySet="NumerosTelefonicosSet">
+      <EndProperty Name="DatosUsuarios">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="DatosUsuarios_ID_DatoUsuario" />
+      </EndProperty>
+      <EndProperty Name="NumerosTelefonicos">
+        <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ClientesSalidas" TypeName="ModeloBD.ClientesSalidas" StoreEntitySet="SalidasSet">
+      <EndProperty Name="Clientes">
+        <ScalarProperty Name="ID_DatoUsuario" ColumnName="Clientes_ID_DatoUsuario" />
+      </EndProperty>
+      <EndProperty Name="Salidas">
+        <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Tipo_DocumentoIdentidadDocumentoIdentidad" TypeName="ModeloBD.Tipo_DocumentoIdentidadDocumentoIdentidad" StoreEntitySet="DocumentoIdentidadSet">
+      <EndProperty Name="Tipo_DocumentoIdentidad">
+        <ScalarProperty Name="ID_TipoDocumentoIdentidad" ColumnName="Tipo_DocumentoIdentidad_ID_TipoDocumentoIdentidad" />
+      </EndProperty>
+      <EndProperty Name="DocumentoIdentidad">
+        <ScalarProperty Name="ID_DocumentoIdentidad" ColumnName="ID_DocumentoIdentidad" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProveedoresEntradas" TypeName="ModeloBD.ProveedoresEntradas" StoreEntitySet="EntradasSet">
+      <EndProperty Name="Proveedores">
+        <ScalarProperty Name="ID_Proveedor" ColumnName="Proveedores_ID_Proveedor" />
+      </EndProperty>
+      <EndProperty Name="Entradas">
+        <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TipoEntradaEntradas" TypeName="ModeloBD.TipoEntradaEntradas" StoreEntitySet="EntradasSet">
+      <EndProperty Name="TipoEntrada">
+        <ScalarProperty Name="ID_TipoEntrada" ColumnName="TipoEntrada_ID_TipoEntrada" />
+      </EndProperty>
+      <EndProperty Name="Entradas">
+        <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="EntradasDetalle_Entrada" TypeName="ModeloBD.EntradasDetalle_Entrada" StoreEntitySet="Detalle_EntradasSet">
+      <EndProperty Name="Entradas">
+        <ScalarProperty Name="ID_Entrada" ColumnName="Entradas_ID_Entrada" />
+      </EndProperty>
+      <EndProperty Name="Detalle_Entradas">
+        <ScalarProperty Name="ID_DetalleEntrada" ColumnName="ID_DetalleEntrada" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductosDetalle_Entrada" TypeName="ModeloBD.ProductosDetalle_Entrada" StoreEntitySet="Detalle_EntradasSet">
+      <EndProperty Name="Productos">
+        <ScalarProperty Name="ID_Producto" ColumnName="Productos_ID_Producto" />
+      </EndProperty>
+      <EndProperty Name="Detalle_Entradas">
+        <ScalarProperty Name="ID_DetalleEntrada" ColumnName="ID_DetalleEntrada" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UnidadesMedidasProductos" TypeName="ModeloBD.UnidadesMedidasProductos" StoreEntitySet="ProductosSet">
+      <EndProperty Name="UnidadesMedidas">
+        <ScalarProperty Name="ID_UnidadMedida" ColumnName="UnidadesMedidas_ID_UnidadMedida" />
+      </EndProperty>
+      <EndProperty Name="Productos">
+        <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MarcasProductosProductos" TypeName="ModeloBD.MarcasProductosProductos" StoreEntitySet="ProductosSet">
+      <EndProperty Name="MarcasProductos">
+        <ScalarProperty Name="ID_MarcaProducto" ColumnName="MarcasProductos_ID_MarcaProducto" />
+      </EndProperty>
+      <EndProperty Name="Productos">
+        <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SubCategoriasProductosProductos" TypeName="ModeloBD.SubCategoriasProductosProductos" StoreEntitySet="ProductosSet">
+      <EndProperty Name="SubCategoriasProductos">
+        <ScalarProperty Name="ID_SubCategoriaProducto" ColumnName="SubCategoriasProductos_ID_SubCategoriaProducto" />
+      </EndProperty>
+      <EndProperty Name="Productos">
+        <ScalarProperty Name="ID_Producto" ColumnName="ID_Producto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoriasProductosSubCategoriasProductos" TypeName="ModeloBD.CategoriasProductosSubCategoriasProductos" StoreEntitySet="SubCategoriasProductosSet">
+      <EndProperty Name="CategoriasProductos">
+        <ScalarProperty Name="ID_CategoriaProducto" ColumnName="CategoriasProductos_ID_CategoriaProducto" />
+      </EndProperty>
+      <EndProperty Name="SubCategoriasProductos">
+        <ScalarProperty Name="ID_SubCategoriaProducto" ColumnName="ID_SubCategoriaProducto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TipoSalidaSalidas" TypeName="ModeloBD.TipoSalidaSalidas" StoreEntitySet="SalidasSet">
+      <EndProperty Name="TipoSalida">
+        <ScalarProperty Name="ID_TipoSalida" ColumnName="TipoSalida_ID_TipoSalida" />
+      </EndProperty>
+      <EndProperty Name="Salidas">
+        <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SalidasDetalle_Salidas" TypeName="ModeloBD.SalidasDetalle_Salidas" StoreEntitySet="Detalle_SalidasSet">
+      <EndProperty Name="Salidas">
+        <ScalarProperty Name="ID_Salida" ColumnName="Salidas_ID_Salida" />
+      </EndProperty>
+      <EndProperty Name="Detalle_Salidas">
+        <ScalarProperty Name="ID_DetalleSalida" ColumnName="ID_DetalleSalida" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductosDetalle_Salidas" TypeName="ModeloBD.ProductosDetalle_Salidas" StoreEntitySet="Detalle_SalidasSet">
+      <EndProperty Name="Productos">
+        <ScalarProperty Name="ID_Producto" ColumnName="Productos_ID_Producto" />
+      </EndProperty>
+      <EndProperty Name="Detalle_Salidas">
+        <ScalarProperty Name="ID_DetalleSalida" ColumnName="ID_DetalleSalida" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TiendasSalidas" TypeName="ModeloBD.TiendasSalidas" StoreEntitySet="SalidasSet">
+      <EndProperty Name="Tiendas">
+        <ScalarProperty Name="ID_Tienda" ColumnName="Tiendas_ID_Tienda" />
+      </EndProperty>
+      <EndProperty Name="Salidas">
+        <ScalarProperty Name="ID_Salida" ColumnName="ID_Salida" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
