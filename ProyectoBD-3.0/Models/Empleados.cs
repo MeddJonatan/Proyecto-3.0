@@ -24,7 +24,7 @@ namespace ProyectoBD_3._0.Models
         public long ID_Empleado { get; set; }
         public long NO_Empleado { get; set; }
         public string Codigo_Empleado { get; set; }
-        public long NO_INSS { get; set; }
+        public string NO_INSS { get; set; }
         public bool Estado_Empleado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

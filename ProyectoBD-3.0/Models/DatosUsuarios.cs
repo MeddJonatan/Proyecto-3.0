@@ -24,8 +24,8 @@ namespace ProyectoBD_3._0.Models
         public long ID_Genero { get; set; }
         public long ID_DocumentoIdentidad { get; set; }
     
+        public virtual NumerosTelefonicos NumerosTelefonicos { get; set; }
         public virtual Genero Genero { get; set; }
         public virtual DocumentoIdentidad DocumentoIdentidad { get; set; }
-        public virtual NumerosTelefonicos NumerosTelefonicos { get; set; }
     }
 }

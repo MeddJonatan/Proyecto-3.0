@@ -26,13 +26,12 @@ namespace ProyectoBD_3._0.Models
         public System.DateTime FechaEntrada { get; set; }
         public long ID_Proveedor { get; set; }
         public long ID_TipoEntrada { get; set; }
-        public long ID_PagoEntrada { get; set; }
         public long ID_Empleado { get; set; }
     
-        public virtual Empleados Empleados { get; set; }
-        public virtual Tiendas Tiendas { get; set; }
         public virtual Proveedores Proveedores { get; set; }
         public virtual TipoEntrada TipoEntrada { get; set; }
+        public virtual Empleados Empleados { get; set; }
+        public virtual Tiendas Tiendas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalle_Entradas> Detalle_Entrada { get; set; }
     }

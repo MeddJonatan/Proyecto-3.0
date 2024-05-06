@@ -24,7 +24,6 @@ namespace ProyectoBD_3._0.Models
         public long NO_MarcaProducto { get; set; }
         public string Codigo_MarcaProducto { get; set; }
         public string Nombre_MarcaProducto { get; set; }
-        public string Web_MarcaProducto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Productos> Productos { get; set; }

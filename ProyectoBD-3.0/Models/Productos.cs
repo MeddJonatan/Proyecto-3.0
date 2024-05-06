@@ -28,11 +28,11 @@ namespace ProyectoBD_3._0.Models
         public long ID_UnidadMedida { get; set; }
         public long ID_SubCategoriaProducto { get; set; }
     
+        public virtual MarcasProductos MarcasProductos { get; set; }
+        public virtual UnidadesMedidas UnidadesMedidas { get; set; }
+        public virtual SubCategoriasProductos SubCategoriasProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalle_Entradas> Detalle_Entrada { get; set; }
-        public virtual UnidadesMedidas UnidadesMedidas { get; set; }
-        public virtual MarcasProductos MarcasProductos { get; set; }
-        public virtual SubCategoriasProductos SubCategoriasProductos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalle_Salidas> Detalle_Salidas { get; set; }
     }

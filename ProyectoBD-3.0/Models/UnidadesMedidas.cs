@@ -21,7 +21,7 @@ namespace ProyectoBD_3._0.Models
         }
     
         public long ID_UnidadMedida { get; set; }
-        public long NO_UnidadMedidad { get; set; }
+        public long NO_UnidadMedida { get; set; }
         public string Codigo_UnidadMedida { get; set; }
         public string Abreviatura_UnidadMedida { get; set; }
         public string Descripcion_UnidadMedida { get; set; }

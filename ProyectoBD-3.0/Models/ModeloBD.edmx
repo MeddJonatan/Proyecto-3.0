@@ -823,7 +823,7 @@
           <Property Name="ID_Empleado" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NO_Empleado" Type="Int64" Nullable="false" />
           <Property Name="Codigo_Empleado" Type="String" Nullable="false" />
-          <Property Name="NO_INSS" Type="Int64" Nullable="false" />
+          <Property Name="NO_INSS" Type="String" Nullable="false" />
           <Property Name="Estado_Empleado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Entradas" Relationship="ModeloBD.EmpleadosEntradas" FromRole="Empleados" ToRole="Entradas" />
           <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasEmpleados" FromRole="Empleados" ToRole="Tiendas" />
@@ -834,7 +834,6 @@
             <PropertyRef Name="ID_Genero" />
           </Key>
           <Property Name="ID_Genero" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NO_Genero" Type="Int64" Nullable="false" />
           <Property Name="Descripcion_Genero" Type="String" Nullable="false" />
           <NavigationProperty Name="DatosUsuarios" Relationship="ModeloBD.GeneroDatosUsuarios" FromRole="Genero" ToRole="DatosUsuarios" />
         </EntityType>
@@ -859,14 +858,13 @@
           <Property Name="Codigo_Tienda" Type="String" Nullable="false" />
           <Property Name="Nombre_Tienda" Type="String" Nullable="false" />
           <Property Name="Direccion_Tienda" Type="String" Nullable="false" />
-          <Property Name="ID_Ciudad" Type="Int64" Nullable="false" />
           <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" />
           <Property Name="ID_Entrada" Type="Int64" Nullable="false" />
           <Property Name="ID_Empleado" Type="Int64" Nullable="false" />
           <Property Name="ID_Salida" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Empleados" Relationship="ModeloBD.TiendasEmpleados" FromRole="Tiendas" ToRole="Empleados" />
           <NavigationProperty Name="NumerosTelefonicos" Relationship="ModeloBD.TiendasNumerosTelefonicos" FromRole="Tiendas" ToRole="NumerosTelefonicos" />
           <NavigationProperty Name="Entradas" Relationship="ModeloBD.TiendasEntradas" FromRole="Tiendas" ToRole="Entradas" />
+          <NavigationProperty Name="Empleados" Relationship="ModeloBD.TiendasEmpleados" FromRole="Tiendas" ToRole="Empleados" />
           <NavigationProperty Name="Salidas" Relationship="ModeloBD.TiendasSalidas" FromRole="Tiendas" ToRole="Salidas" />
         </EntityType>
         <EntityType Name="NumerosTelefonicos">
@@ -902,9 +900,9 @@
           <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" />
           <Property Name="ID_Genero" Type="Int64" Nullable="false" />
           <Property Name="ID_DocumentoIdentidad" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="NumerosTelefonicos" Relationship="ModeloBD.NumerosTelefonicosDatosUsuarios" FromRole="DatosUsuarios" ToRole="NumerosTelefonicos" />
           <NavigationProperty Name="Genero" Relationship="ModeloBD.GeneroDatosUsuarios" FromRole="DatosUsuarios" ToRole="Genero" />
           <NavigationProperty Name="DocumentoIdentidad" Relationship="ModeloBD.DocumentoIdentidadDatosUsuarios" FromRole="DatosUsuarios" ToRole="DocumentoIdentidad" />
-          <NavigationProperty Name="NumerosTelefonicos" Relationship="ModeloBD.NumerosTelefonicosDatosUsuarios" FromRole="DatosUsuarios" ToRole="NumerosTelefonicos" />
         </EntityType>
         <EntityType Name="Clientes" BaseType="ModeloBD.DatosUsuarios">
           <Property Name="ID_Cliente" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -944,12 +942,11 @@
           <Property Name="FechaEntrada" Type="DateTime" Nullable="false" />
           <Property Name="ID_Proveedor" Type="Int64" Nullable="false" />
           <Property Name="ID_TipoEntrada" Type="Int64" Nullable="false" />
-          <Property Name="ID_PagoEntrada" Type="Int64" Nullable="false" />
           <Property Name="ID_Empleado" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Empleados" Relationship="ModeloBD.EmpleadosEntradas" FromRole="Entradas" ToRole="Empleados" />
-          <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasEntradas" FromRole="Entradas" ToRole="Tiendas" />
           <NavigationProperty Name="Proveedores" Relationship="ModeloBD.ProveedoresEntradas" FromRole="Entradas" ToRole="Proveedores" />
           <NavigationProperty Name="TipoEntrada" Relationship="ModeloBD.TipoEntradaEntradas" FromRole="Entradas" ToRole="TipoEntrada" />
+          <NavigationProperty Name="Empleados" Relationship="ModeloBD.EmpleadosEntradas" FromRole="Entradas" ToRole="Empleados" />
+          <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasEntradas" FromRole="Entradas" ToRole="Tiendas" />
           <NavigationProperty Name="Detalle_Entrada" Relationship="ModeloBD.EntradasDetalle_Entrada" FromRole="Entradas" ToRole="Detalle_Entradas" />
         </EntityType>
         <EntityType Name="Detalle_Entradas">
@@ -971,7 +968,6 @@
           <Property Name="ID_Proveedor" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RazonSocial" Type="String" Nullable="false" />
           <Property Name="CodigoTributario" Type="String" Nullable="false" />
-          <Property Name="ID_NumTelefono" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Entradas" Relationship="ModeloBD.ProveedoresEntradas" FromRole="Proveedores" ToRole="Entradas" />
         </EntityType>
         <EntityType Name="Productos">
@@ -984,10 +980,10 @@
           <Property Name="ID_MarcaProducto" Type="Int64" Nullable="false" />
           <Property Name="ID_UnidadMedida" Type="Int64" Nullable="false" />
           <Property Name="ID_SubCategoriaProducto" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Detalle_Entrada" Relationship="ModeloBD.ProductosDetalle_Entrada" FromRole="Productos" ToRole="Detalle_Entradas" />
-          <NavigationProperty Name="UnidadesMedidas" Relationship="ModeloBD.UnidadesMedidasProductos" FromRole="Productos" ToRole="UnidadesMedidas" />
           <NavigationProperty Name="MarcasProductos" Relationship="ModeloBD.MarcasProductosProductos" FromRole="Productos" ToRole="MarcasProductos" />
+          <NavigationProperty Name="UnidadesMedidas" Relationship="ModeloBD.UnidadesMedidasProductos" FromRole="Productos" ToRole="UnidadesMedidas" />
           <NavigationProperty Name="SubCategoriasProductos" Relationship="ModeloBD.SubCategoriasProductosProductos" FromRole="Productos" ToRole="SubCategoriasProductos" />
+          <NavigationProperty Name="Detalle_Entrada" Relationship="ModeloBD.ProductosDetalle_Entrada" FromRole="Productos" ToRole="Detalle_Entradas" />
           <NavigationProperty Name="Detalle_Salidas" Relationship="ModeloBD.ProductosDetalle_Salidas" FromRole="Productos" ToRole="Detalle_Salidas" />
         </EntityType>
         <EntityType Name="UnidadesMedidas">
@@ -995,7 +991,7 @@
             <PropertyRef Name="ID_UnidadMedida" />
           </Key>
           <Property Name="ID_UnidadMedida" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NO_UnidadMedidad" Type="Int64" Nullable="false" />
+          <Property Name="NO_UnidadMedida" Type="Int64" Nullable="false" />
           <Property Name="Codigo_UnidadMedida" Type="String" Nullable="false" />
           <Property Name="Abreviatura_UnidadMedida" Type="String" Nullable="false" />
           <Property Name="Descripcion_UnidadMedida" Type="String" Nullable="false" />
@@ -1041,7 +1037,6 @@
           <Property Name="NO_MarcaProducto" Type="Int64" Nullable="false" />
           <Property Name="Codigo_MarcaProducto" Type="String" Nullable="false" />
           <Property Name="Nombre_MarcaProducto" Type="String" Nullable="false" />
-          <Property Name="Web_MarcaProducto" Type="String" Nullable="false" />
           <NavigationProperty Name="Productos" Relationship="ModeloBD.MarcasProductosProductos" FromRole="MarcasProductos" ToRole="Productos" />
         </EntityType>
         <EntityType Name="Salidas">
@@ -1055,9 +1050,9 @@
           <Property Name="ID_TipoSalida" Type="Int64" Nullable="false" />
           <Property Name="ID_Empleado" Type="Int64" Nullable="false" />
           <Property Name="ID_Cliente" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TipoSalida" Relationship="ModeloBD.TipoSalidaSalidas" FromRole="Salidas" ToRole="TipoSalida" />
           <NavigationProperty Name="Empleados" Relationship="ModeloBD.EmpleadosSalidas" FromRole="Salidas" ToRole="Empleados" />
           <NavigationProperty Name="Clientes" Relationship="ModeloBD.ClientesSalidas" FromRole="Salidas" ToRole="Clientes" />
-          <NavigationProperty Name="TipoSalida" Relationship="ModeloBD.TipoSalidaSalidas" FromRole="Salidas" ToRole="TipoSalida" />
           <NavigationProperty Name="Detalle_Salidas" Relationship="ModeloBD.SalidasDetalle_Salidas" FromRole="Salidas" ToRole="Detalle_Salidas" />
           <NavigationProperty Name="Tiendas" Relationship="ModeloBD.TiendasSalidas" FromRole="Salidas" ToRole="Tiendas" />
         </EntityType>
@@ -1189,7 +1184,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.Genero)">
         <MappingFragment StoreEntitySet="GeneroSet">
           <ScalarProperty Name="ID_Genero" ColumnName="ID_Genero" />
-          <ScalarProperty Name="NO_Genero" ColumnName="NO_Genero" />
           <ScalarProperty Name="Descripcion_Genero" ColumnName="Descripcion_Genero" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -1214,7 +1208,6 @@
           <ScalarProperty Name="Codigo_Tienda" ColumnName="Codigo_Tienda" />
           <ScalarProperty Name="Nombre_Tienda" ColumnName="Nombre_Tienda" />
           <ScalarProperty Name="Direccion_Tienda" ColumnName="Direccion_Tienda" />
-          <ScalarProperty Name="ID_Ciudad" ColumnName="ID_Ciudad" />
           <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
           <ScalarProperty Name="ID_Entrada" ColumnName="ID_Entrada" />
           <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
@@ -1302,7 +1295,6 @@
           <ScalarProperty Name="FechaEntrada" ColumnName="FechaEntrada" />
           <ScalarProperty Name="ID_Proveedor" ColumnName="ID_Proveedor" />
           <ScalarProperty Name="ID_TipoEntrada" ColumnName="ID_TipoEntrada" />
-          <ScalarProperty Name="ID_PagoEntrada" ColumnName="ID_PagoEntrada" />
           <ScalarProperty Name="ID_Empleado" ColumnName="ID_Empleado" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -1324,7 +1316,6 @@
           <ScalarProperty Name="ID_Proveedor" ColumnName="ID_Proveedor" />
           <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
           <ScalarProperty Name="CodigoTributario" ColumnName="CodigoTributario" />
-          <ScalarProperty Name="ID_NumTelefono" ColumnName="ID_NumTelefono" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1344,7 +1335,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(ModeloBD.UnidadesMedidas)">
         <MappingFragment StoreEntitySet="UnidadesMedidasSet">
           <ScalarProperty Name="ID_UnidadMedida" ColumnName="ID_UnidadMedida" />
-          <ScalarProperty Name="NO_UnidadMedidad" ColumnName="NO_UnidadMedidad" />
+          <ScalarProperty Name="NO_UnidadMedida" ColumnName="NO_UnidadMedidad" />
           <ScalarProperty Name="Codigo_UnidadMedida" ColumnName="Codigo_UnidadMedida" />
           <ScalarProperty Name="Abreviatura_UnidadMedida" ColumnName="Abreviatura_UnidadMedida" />
           <ScalarProperty Name="Descripcion_UnidadMedida" ColumnName="Descripcion_UnidadMedida" />
@@ -1389,7 +1380,6 @@
           <ScalarProperty Name="NO_MarcaProducto" ColumnName="NO_MarcaProducto" />
           <ScalarProperty Name="Codigo_MarcaProducto" ColumnName="Codigo_MarcaProducto" />
           <ScalarProperty Name="Nombre_MarcaProducto" ColumnName="Nombre_MarcaProducto" />
-          <ScalarProperty Name="Web_MarcaProducto" ColumnName="Web_MarcaProducto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

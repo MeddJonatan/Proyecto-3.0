@@ -28,9 +28,9 @@ namespace ProyectoBD_3._0.Models
         public long ID_Empleado { get; set; }
         public long ID_Cliente { get; set; }
     
+        public virtual TipoSalida TipoSalida { get; set; }
         public virtual Empleados Empleados { get; set; }
         public virtual Clientes Clientes { get; set; }
-        public virtual TipoSalida TipoSalida { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Detalle_Salidas> Detalle_Salidas { get; set; }
         public virtual Tiendas Tiendas { get; set; }

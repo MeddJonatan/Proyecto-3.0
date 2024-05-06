@@ -23,7 +23,6 @@ namespace ProyectoBD_3._0.Models
         public long ID_Proveedor { get; set; }
         public string RazonSocial { get; set; }
         public string CodigoTributario { get; set; }
-        public long ID_NumTelefono { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entradas> Entradas { get; set; }

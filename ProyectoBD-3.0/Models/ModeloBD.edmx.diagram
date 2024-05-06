@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c5bfdc5e315043b48ef456de5330ccc2" Name="Diagram1" ZoomLevel="17" ShowGrid="true" DisplayType="true" >
+      <Diagram DiagramId="c5bfdc5e315043b48ef456de5330ccc2" Name="Diagram1" ZoomLevel="55" ShowGrid="true" DisplayType="true" >
         <EntityTypeShape EntityType="ModeloBD.Empleados" Width="3" PointX="26.5" PointY="21" />
         <EntityTypeShape EntityType="ModeloBD.Genero" Width="3.375" PointX="41.125" PointY="17.25" />
         <EntityTypeShape EntityType="ModeloBD.Paises" Width="3.375" PointX="41.125" PointY="33.875" />
@@ -19,7 +19,7 @@
         <EntityTypeShape EntityType="ModeloBD.Detalle_Entradas" Width="3.125" PointX="22.375" PointY="5.625" />
         <EntityTypeShape EntityType="ModeloBD.Proveedores" Width="3.125" PointX="34.875" PointY="5.75" />
         <EntityTypeShape EntityType="ModeloBD.Productos" Width="3.125" PointX="16.125" PointY="4.875" />
-        <EntityTypeShape EntityType="ModeloBD.UnidadesMedidas" Width="3.125" PointX="9.875" PointY="1" />
+        <EntityTypeShape EntityType="ModeloBD.UnidadesMedidas" Width="3.125" PointX="9.875" PointY="0.75" />
         <EntityTypeShape EntityType="ModeloBD.TipoEntrada" Width="3.125" PointX="28.625" PointY="1.125" />
         <EntityTypeShape EntityType="ModeloBD.CategoriasProductos" Width="3.125" PointX="3.5" PointY="5.375" />
         <EntityTypeShape EntityType="ModeloBD.SubCategoriasProductos" Width="3.125" PointX="9.875" PointY="5.125" />
@@ -45,10 +45,11 @@
         <AssociationConnector Association="ModeloBD.EntradasDetalle_Entrada" />
         <AssociationConnector Association="ModeloBD.ProductosDetalle_Entrada" />
         <AssociationConnector Association="ModeloBD.UnidadesMedidasProductos" ManuallyRouted="true" >
-          <ConnectorPoint PointX="13" PointY="1.9825664765114142" />
-          <ConnectorPoint PointX="14.698785164277067" PointY="1.9825664765114142" />
-          <ConnectorPoint PointX="14.698785164277067" PointY="5.5465515420461422" />
-          <ConnectorPoint PointX="16.125" PointY="5.5465515420461422" />
+          <ConnectorPoint PointX="13" PointY="2.9209156691706726" />
+          <ConnectorPoint PointX="13.375" PointY="3.2959156691706717" />
+          <ConnectorPoint PointX="14.519965862506069" PointY="3.2959156691706717" />
+          <ConnectorPoint PointX="14.519965862506069" PointY="7.1895218567708277" />
+          <ConnectorPoint PointX="16.125" PointY="7.1895218567708277" />
         </AssociationConnector>
         <AssociationConnector Association="ModeloBD.MarcasProductosProductos" />
         <AssociationConnector Association="ModeloBD.SubCategoriasProductosProductos" />

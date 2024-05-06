@@ -17,9 +17,9 @@ namespace ProyectoBD_3._0.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Tiendas()
         {
-            this.Empleados = new HashSet<Empleados>();
             this.NumerosTelefonicos = new HashSet<NumerosTelefonicos>();
             this.Entradas = new HashSet<Entradas>();
+            this.Empleados = new HashSet<Empleados>();
             this.Salidas = new HashSet<Salidas>();
         }
     
@@ -28,18 +28,17 @@ namespace ProyectoBD_3._0.Models
         public string Codigo_Tienda { get; set; }
         public string Nombre_Tienda { get; set; }
         public string Direccion_Tienda { get; set; }
-        public long ID_Ciudad { get; set; }
         public long ID_NumTelefono { get; set; }
         public long ID_Entrada { get; set; }
         public long ID_Empleado { get; set; }
         public long ID_Salida { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Empleados> Empleados { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NumerosTelefonicos> NumerosTelefonicos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Entradas> Entradas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Empleados> Empleados { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Salidas> Salidas { get; set; }
     }

@@ -21,7 +21,6 @@ namespace ProyectoBD_3._0.Models
         }
     
         public long ID_Genero { get; set; }
-        public long NO_Genero { get; set; }
         public string Descripcion_Genero { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
