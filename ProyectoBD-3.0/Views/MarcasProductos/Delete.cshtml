@@ -1,0 +1,40 @@
+﻿@model Proyecto.Model.Clases.MarcasProductos
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>¿Seguro que desea continuar?</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="row">Codigo de la Marca del Producto: </th>
+                        <th scope="row">Nombre de la Marca del Producto: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Codigo_MarcaProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Nombre_MarcaProducto)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-md-center">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            }
+        </div>
+    </div>
+</div>

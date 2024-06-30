@@ -1,0 +1,71 @@
+﻿@model Proyecto.Model.Clases.DatosUsuarios
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>¿Seguro que desea continuar?</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th scope="row">Primer Nombre:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.PrimerNombre)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Segundo Nombre:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.SegundoNombre)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Primer Apellido:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.PrimerApellido)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Segundo Apellido: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.SegundoApellido)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Edad: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Edad)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Género:  </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Generos.Descripcion_Genero)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Número de Telefóno: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.NumerosTelefonicos.NumeroTelefono)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card-footer text-md-center">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

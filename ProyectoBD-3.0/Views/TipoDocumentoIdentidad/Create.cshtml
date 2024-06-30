@@ -1,0 +1,41 @@
+﻿@model Proyecto.Model.Clases.TipoDocumentoIdentidad
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-sm bg-light">
+            <div class="card-header">
+                <h4>Crear Tipo de Documento de Identidad</h4>
+            </div>
+            <div class="card-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <th>Codigo Del Tipo de Documento</th>
+                        @Html.EditorFor(model => model.Codigo_TipoDocumento, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.Codigo_TipoDocumento, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <th>Descripción del Tipo de Documento de Identidad</th>
+                        @Html.EditorFor(model => model.Descripcion_TipoDocumentoIdentidad, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.Descripcion_TipoDocumentoIdentidad, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <th>ID Del Pais</th>
+                        @Html.DropDownList("ID_Pais", null, htmlAttributes: new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_Pais, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="card-footer text-md-center mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger btn-lg ml-3" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

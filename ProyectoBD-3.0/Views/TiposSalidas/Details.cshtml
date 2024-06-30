@@ -1,0 +1,35 @@
+﻿@model Proyecto.Model.Clases.TiposSalidas
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>Tipo de Salida</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 40%" scope="row">Codigo Tipo de Salida: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Codigo_TipoSalida)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 40%" scope="row">Descripción del Tipo de Salida: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Descripcion_TipoSalida)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card-footer text-md-center mt-3">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ID_TipoSalida }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID_TipoSalida }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    </div>
+</div>

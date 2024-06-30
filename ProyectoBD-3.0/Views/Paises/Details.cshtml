@@ -1,0 +1,54 @@
+﻿@model Proyecto.Model.Clases.Paises
+
+@{
+    ViewBag.Title = "Detalles del País";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>Detalles del Catalogo de Paises</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 30%" scope="row">Codigo pais:</th>
+                        <td style="width: 70%">
+                            @Html.DisplayFor(model => model.Codigo_Pais)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="width: 30%" scope="row">Nombre Pais:</th>
+                        <td style="width: 70%">
+                            @Html.DisplayFor(model => model.Nombre_Pais)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="width: 30%" scope="row">Nacionalidad:</th>
+                        <td style="width: 70%">
+                            @Html.DisplayFor(model => model.Nacionalidad)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="width: 30%" scope="row">Sufijo:</th>
+                        <td style="width: 70%">
+                            @Html.DisplayFor(model => model.Sufijo_Pais)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="text-right mt-3">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ID_Pais }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID_Pais }, new { @class = "btn btn-danger", onclick = "return confirm('¿Estás seguro de que quieres eliminar esta categoría?');" })
+                @Html.ActionLink("Volver al listado", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    </div>
+</div>

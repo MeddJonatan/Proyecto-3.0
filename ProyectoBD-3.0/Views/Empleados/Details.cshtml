@@ -1,0 +1,54 @@
+﻿@model Proyecto.Model.Clases.Empleados
+@{
+    ViewBag.Title = "Detalles del Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <div class="form-horizontal">
+                <h4>Detalle de Empleado</h4>
+                <hr />
+                <div>
+                    @Html.LabelFor(model => model.PrimerNombre, htmlAttributes: new { @class = "control-label", @maxlength = "80", @style = "max-width:100%;" })
+                    @Html.DisplayFor(model => model.PrimerNombre, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PrimerApellido, htmlAttributes: new { @class = "control-label", @maxlength = "80", @style = "max-width:100%;" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NO_Empleado, htmlAttributes: new { @class = "control-label", @maxlength = "80", @style = "max-width:100%;" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.NO_Empleado, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Codigo_Empleado, htmlAttributes: new { @class = "control-label", @maxlength = "80", @style = "max-width:100%;" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.Codigo_Empleado, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NO_INSS, htmlAttributes: new { @class = "control-label", @maxlength = "80", @style = "max-width:100%;" })
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => model.NO_INSS, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ID_Empleado }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Volver a la Lista", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+</div>

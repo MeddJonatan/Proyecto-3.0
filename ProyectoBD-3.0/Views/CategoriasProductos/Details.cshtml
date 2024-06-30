@@ -1,0 +1,34 @@
+﻿@model Proyecto.Model.Clases.CategoriasProductos
+
+@{
+    ViewBag.Title = "Detalles de Categoría de Producto";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light"  style="width:70%">
+        <div class="card-header">
+            <h4>Detalles de Categoría de Producto</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 30%" scope="row">Código:</th>
+                        <td style="width: 70%">@Html.DisplayFor(model => model.Codigo_CategoriaProducto)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre:</th>
+                        <td>@Html.DisplayFor(model => model.Nombre_CategoriaProducto)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="text-right mt-3" style="align-items:center">
+
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.ID_CategoriaProducto }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID_CategoriaProducto }, new { @class = "btn btn-danger", onclick = "return confirm('¿Estás seguro de que quieres eliminar esta categoría?');" })
+                    @Html.ActionLink("Volver al listado", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    </div>
+</div>

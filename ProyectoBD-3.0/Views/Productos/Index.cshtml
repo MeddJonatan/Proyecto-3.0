@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Proyecto.Model.Clases.Productos>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container-fluid mt-4" style="padding-left:5%; padding-right:5%">
+        <hr />
+        <h2>Listado de Productos</h2>
+        <hr />
+        <hr />
+        <p>
+        <p>
+            @Html.ActionLink("Agregar Nuevo Producto", "Create", null, new { @class = "btn btn-primary  btn-lg ml-3" })
+        </p>
+        <hr />
+        <hr />
+        <table id="productosTable" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 17%">Codigo de la Categoria del Producto</th>
+                    <th style="width: 17%">Codigo de la Marca del Producto</th>
+                    <th style="width: 17%">Abreviatura de la Unidad de Medida</th>
+                    <th style="width: 17%; text-align: center; align-content: center">Codigo del Producto</th>
+                    <th style="width: 17%; text-align: center; align-content: center">Nombre del Producto</th>
+                    <th style="width: 15%; text-align:center; align-content: center">Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoriasProductos.Codigo_CategoriaProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MarcasProductos.Codigo_MarcaProducto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnidadesMedidas.Abreviatura_UnidadMedida)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo_Producto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreProducto)
+                        </td>
+
+                        <td align="center">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ID_Producto }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Detalles", "Details", new { id = item.ID_Producto }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_Producto }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @section Scripts {
+            <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js   "></script>
+            <script>
+                $(document).ready(function () {
+                    $('#productosTable').DataTable();
+                });
+            </script>
+        }
+    </div>
+</body>

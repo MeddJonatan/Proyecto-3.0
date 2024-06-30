@@ -1,0 +1,32 @@
+﻿@model Proyecto.Model.Clases.EmpresasTelefonicas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>Empresa Telefónica</h4>
+        </div>
+        <div class="card-body">
+            <hr />
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 30%" scope="row">Nombre:</th>
+                        <td style="width: 70%">@Html.DisplayFor(model => model.Nombre_EmpresaTelefonica)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr />
+
+            <div class="text-right mt-3">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ID_EmpresaTelefonica }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID_EmpresaTelefonica }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Volver al Listado", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Proyecto.Model.Clases.Empleados>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .table-responsive {
+        margin: 20px 0;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .btn-group .btn {
+        min-width: 80px;
+    }
+
+    .btn-group .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    .btn-group .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-group .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+</style>
+
+<body>
+    <div class="container-fluid mt-4" style="padding-left:5%; padding-right:5%">
+        <hr />
+        <h2>Lista de Empleados</h2>
+        <hr />
+        <hr />
+        <div class="d-flex justify-content-start mb-3">
+            @Html.ActionLink("Nuevo Empleado", "Create", null, new { @class = "btn btn-primary" })
+        </div>
+        <hr />
+        <hr />
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.PrimerNombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.PrimerApellido)</th>
+                        <th>@Html.DisplayNameFor(model => model.NO_Empleado)</th>
+                        <th>@Html.DisplayNameFor(model => model.Codigo_Empleado)</th>
+                        <th class="text-center" style="width: 20%; text-align:center; align-content: center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.PrimerNombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PrimerApellido)</td>
+                            <td>@Html.DisplayFor(modelItem => item.NO_Empleado)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Codigo_Empleado)</td>
+                            <td class="text-center">
+                                <div class="btn-group" role="group">
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.ID_Empleado }, new { @class = "btn btn-sm btn-warning mx-1" })
+                                    @Html.ActionLink("Detalles", "Details", new { id = item.ID_Empleado }, new { @class = "btn btn-sm btn-info mx-1" })
+                                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_Empleado }, new { @class = "btn btn-sm btn-danger mx-1" })
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

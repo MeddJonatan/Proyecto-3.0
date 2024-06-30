@@ -1,0 +1,68 @@
+﻿@model Proyecto.Model.Clases.DatosUsuarios
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-sm bg-light" style="width:70%">
+            <div class="card-header">
+                <h4>Crear Datos de Usuario</h4>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <label for="PrimerNombre">Primer Nombre</label>
+                        @Html.EditorFor(model => model.PrimerNombre, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.PrimerNombre, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SegundoNombre">Segundo Nombre</label>
+                        @Html.EditorFor(model => model.SegundoNombre, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.SegundoNombre, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="PrimerApellido">Primer Apellido</label>
+                        @Html.EditorFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="SegundoApellido">Segundo Apellido</label>
+                        @Html.EditorFor(model => model.SegundoApellido, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Edad">Edad</label>
+                        @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ID_Genero">Género</label>
+                        @Html.DropDownList("ID_Genero", null, htmlAttributes: new { @class = "form-control", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_Genero, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ID_NumTelefono">Número Telefónico</label>
+                        @Html.DropDownList("ID_NumTelefono", null, htmlAttributes: new { @class = "form-control", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_NumTelefono, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="card-footer text-md-center mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger btn-lg ml-3" })
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</body>

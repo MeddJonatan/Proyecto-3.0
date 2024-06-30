@@ -1,0 +1,45 @@
+﻿@model Proyecto.Model.Clases.Clientes
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>¿Seguro que desea continuar?</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.PrimerNombre)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PrimerNombre)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PrimerApellido)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PrimerApellido)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NO_Cliente)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NO_Cliente)
+                </dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    @Html.HiddenFor(model => model.ID_Cliente)
+                    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            }
+        </div>
+    </div>
+</div>

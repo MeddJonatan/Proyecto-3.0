@@ -1,0 +1,63 @@
+﻿@model Proyecto.Model.Clases.DocumentoIdentidad
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>Editar Documento Identidad</h4>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ID_DocumentoIdentidad)
+
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Codigo Documento Identidad: </th>
+                            <td>
+                                @Html.EditorFor(model => model.Codigo_DocumentoIdentidad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Codigo_DocumentoIdentidad, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de Emisión: </th>
+                            <td>
+                                @Html.EditorFor(model => model.FechaEmision_DocumentoIdentidad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FechaEmision_DocumentoIdentidad, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de Finalización: </th>
+                            <td>
+                                @Html.EditorFor(model => model.FechaFinalizacion_DocumentoIdentidad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.FechaFinalizacion_DocumentoIdentidad, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tipo de Documento Identidad: </th>
+                            <td>
+                                @Html.DropDownList("ID_TipoDocumentoIdentidad", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ID_TipoDocumentoIdentidad, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card-footer text-md-center">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

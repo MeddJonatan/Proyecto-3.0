@@ -1,33 +1,459 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<head>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="~/Content/Site">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .fw-light {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        font-size: 2em;
+        background: linear-gradient(90deg, #4a00e0, #00c6ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        display: inline-block;
+        width: contain;
+    }
+</style>
+
 
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class=" container-fluid">
+                <h1 class="fw-light">
+                    <span style="font-size:2em; font-weight:900">Elementos  del </span>  <span style="font-size:2em; font-weight:900">Sistema</span>
+</h1>
+                <p class="lead text-muted">Descripción breve sobre los diferentes elementos del sistema.</p>
+            </div>
+        </div>
     </section>
 
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+    <div class="album py-5 bg-light">
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+                <!-- Elemento 01 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="/CategoriasProductos/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="20%" style="stop-color:rgba(39, 191, 245, 0.8);stop-opacity:1" />
+                                            <stop offset="80%" style="stop-color:rgba(194, 236, 6, 0.3);stop-opacity:50" />
+                                        </linearGradient>
+                                        <filter id="f1" x="0" y="0">
+                                            <feGaussianBlur stdDeviation="0" />
+                                        </filter>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grad1)" filter="url(#f1)" />
+                                    <title>Categorias Productos</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(0, 0, 0, 0.7); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color">
+                                            Categorias Productos
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 02 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="/Clientes/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad1)" filter="url(#f1)" />
+                                    <title>Clientes</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(0, 0, 0, 0.7); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color">
+                                            Clientes
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 03 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="/DatosUsuarios/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad1)" filter="url(#f1)" />
+                                    <title>Datos Usuarios</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(0, 0, 0, 0.7); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color">
+                                            Datos Usuarios
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 04 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/DocumentoIdentidad/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad3)" filter="url(#f3)" />
+                                    <title>Documentos de Identidades</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgb(255, 255, 255); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:white">
+                                            Documentos de Identidades
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 05 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/Empleados/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad3)" filter="url(#f3)" />
+                                    <title>Empleados</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgb(255, 255, 255); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:white">
+                                            Empleados
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 06 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/EmpresasTelefonicas/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                        <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="20%" style="stop-color:rgba(52, 109, 122, 1);stop-opacity:1" />
+                                            <stop offset="80%" style="stop-color:rgba(50, 113, 68, 1);stop-opacity:30" />
+                                        </linearGradient>
+                                        <filter id="f3" x="0" y="0">
+                                            <feGaussianBlur stdDeviation="0" />
+                                        </filter>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grad3)" filter="url(#f3)" />
+                                    <title>Empresas Telefonicas</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgb(255, 255, 255); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:white">
+                                            Empresas Telefonicas
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 07 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="/MarcasProductos/Details/1" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" style="background-color:#ff6b6bc6">
+                                    <title>Entradas</title>
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="text-align:center">Entradas</text>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 08 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/Generos/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad5)" filter="url(#f5)" />
+                                    <title>Generos</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Generos
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 09 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/MarcasProductos/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                        <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="20%" style="stop-color:rgba(52, 109, 122, 0.90);stop-opacity:1" />
+                                            <stop offset="80%" style="stop-color:rgba(148, 17, 9, 0.70);stop-opacity:30" />
+                                        </linearGradient>
+                                        <filter id="f5" x="0" y="0">
+                                            <feGaussianBlur stdDeviation="0" />
+                                        </filter>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grad5)" filter="url(#f5)" />
+                                    <title>Marcas Productos</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Marcas Productos
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 10 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/Paises/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="20%" style="stop-color:rgba(52, 109, 122, 0.90);stop-opacity:1" />
+                                            <stop offset="80%" style="stop-color:rgba(85, 52, 122, 0.90);stop-opacity:30" />
+                                        </linearGradient>
+                                        <filter id="f2" x="0" y="0">
+                                            <feGaussianBlur stdDeviation="0" />
+                                        </filter>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grad2)" filter="url(#f2)" />
+                                    <title>Paises</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Paises
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 11 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/Productos/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad2)" filter="url(#f2)" />
+                                    <title>Productos</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Productos
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 12 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/Proveedores/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad2)" filter="url(#f2)" />
+                                    <title>Proveedores</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Proveedores
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 13 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="/MarcasProductos/Details/1" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice" style="background-color:#197784cf">
+                                    <title>Salidas</title>
+                                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="text-align:center">Salidas</text>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 14 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/Tiendas/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad3)" filter="url(#f3)" />
+                                    <title>Tiendas</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgb(255, 255, 255); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:white">
+                                            Tiendas
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 15 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/TipoDocumentoIdentidad/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad3)" filter="url(#f3)" />
+                                    <title>Tipos de Documentos de Identidad</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgb(255, 255, 255); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:white">
+                                            Tipos de Documentos de Identidad
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 16 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/TiposEntradas/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad4)" filter="url(#f4)" />
+                                    <title>Tipos de Entradas</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Tipos de Entradas
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 17 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/TiposSalidas/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad4)" filter="url(#f4)" />
+                                    <title>Tipos de Salidas</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Tipos de Salidas
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 18 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/UnidadesMedidas/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <defs>
+                                        <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="10%" style="stop-color:rgba(52, 109, 122, 0.90);stop-opacity:1" />
+                                            <stop offset="80%" style="stop-color:rgba(113, 61, 50, 0.90);stop-opacity:30" />
+                                        </linearGradient>
+                                        <filter id="f4" x="0" y="0">
+                                            <feGaussianBlur stdDeviation="0" />
+                                        </filter>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grad4)" filter="url(#f4)" />
+                                    <title>Unidades de Medidas</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Unidades de Medidas
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Elemento 19 -->
+                <div class="container mt-5">
+                    <div class="col">
+                        <a href="~/NumerosTelefonicos/Index" class="text-decoration-none">
+                            <div class="card shadow-sm card-custom" style="background-color:azure">
+                                <svg class="bd-placeholder-img card-img-top" width="100%" height="225" preserveAspectRatio="xMidYMid slice">
+                                    <rect width="100%" height="100%" fill="url(#grad4)" filter="url(#f4)" />
+                                    <title>Números Telefonicos</title>
+                                    <svg width="100%" height="100%" style="padding-right:5%; padding-left:5%">
+                                        <text x="50%" y="50%" text-anchor="middle" dy=".3em" style="fill: rgba(255, 255, 255, 1); font-size: 3vmin; font-family: 'Roboto', sans-serif; text-align: center; color:azure">
+                                            Números Telefonicos
+                                        </text>
+                                    </svg>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>

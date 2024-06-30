@@ -1,0 +1,40 @@
+﻿@model Proyecto.Model.Clases.EmpresasTelefonicas
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>¿Desea Eliminar Esta Telefonia?</h4>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Nombre_EmpresaTelefonica)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Nombre_EmpresaTelefonica)
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="card-footer text-right">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            }
+        </div>
+    </div>
+</div>
+

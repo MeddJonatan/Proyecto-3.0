@@ -1,0 +1,53 @@
+﻿@model Proyecto.Model.Clases.Productos
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-sm bg-light" style="width:70%">
+            <div class="card-header">
+                <h4>Crear Producto</h4>
+            </div>
+            <div class="card-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Codigo_Producto, htmlAttributes: new { @class = "control-label " })
+                        @Html.EditorFor(model => model.Codigo_Producto, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.Codigo_Producto, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.NombreProducto, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.NombreProducto, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.NombreProducto, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <th>Categoria del Producto</th>
+                        @Html.DropDownList("ID_CategoriaProducto", null, htmlAttributes: new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_CategoriaProducto, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <th>Marca del Producto</th>
+                        @Html.DropDownList("ID_MarcaProducto", null, htmlAttributes: new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_MarcaProducto, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <th>Abreviatura de la Unidadad Medida</th>
+                        @Html.DropDownList("ID_UnidadMedida", null, htmlAttributes: new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_UnidadMedida, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="card-footer text-md-center mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger btn-lg ml-3" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

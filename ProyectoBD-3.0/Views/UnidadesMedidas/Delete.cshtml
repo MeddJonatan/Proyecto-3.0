@@ -1,0 +1,43 @@
+﻿@model Proyecto.Model.Clases.UnidadesMedidas
+
+@{
+    ViewBag.Title = "Eliminar Unidades Medidas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>¿Seguro que desea continuar?</h4>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="row">Abreviatura de la Unidad de Medida: </th>
+                        <th scope="row">Descripción de la Unidad de Medida: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => model.Abreviatura_UnidadMedida)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Descripcion_UnidadMedida)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-md-center">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            }
+        </div>
+    </div>
+</div>

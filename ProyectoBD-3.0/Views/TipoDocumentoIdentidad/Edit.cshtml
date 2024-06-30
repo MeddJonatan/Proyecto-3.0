@@ -1,0 +1,56 @@
+﻿@model Proyecto.Model.Clases.TipoDocumentoIdentidad
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>Editar Tipo de Documento Identidad</h4>
+        </div>
+        <div class="card-body">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ID_TipoDocumentoIdentidad)
+
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Codigo Del Tipo de Documento: </th>
+                            <td>
+                                @Html.EditorFor(model => model.Codigo_TipoDocumento, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Codigo_TipoDocumento, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Descripción del Tipo de Documento de Identidad: </th>
+                            <td>
+                                @Html.EditorFor(model => model.Descripcion_TipoDocumentoIdentidad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Descripcion_TipoDocumentoIdentidad, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pais: </th>
+                            <td>
+                                @Html.DropDownList("ID_Pais", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ID_Pais, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card-footer text-md-center">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

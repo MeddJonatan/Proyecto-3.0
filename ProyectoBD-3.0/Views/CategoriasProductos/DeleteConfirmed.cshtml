@@ -1,0 +1,30 @@
+﻿@model Proyecto.Model.Clases.CategoriasProductos
+
+@{
+    ViewBag.Title = "Eliminar Categoría de Producto";
+}
+
+<div class="container mt-4">
+    <h2>Eliminar Categoría de Producto</h2>
+
+    <p>¿Estás seguro de que quieres eliminar la siguiente categoría?</p>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.ID_CategoriaProducto)</dd>
+
+        <dt class="col-sm-3">Código:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Codigo_CategoriaProducto)</dd>
+
+        <dt class="col-sm-3">Nombre:</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Nombre_CategoriaProducto)</dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "CategoriasProductos", new { id = Model.ID_CategoriaProducto }, FormMethod.Post, new { @class = "form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+    }
+</div>

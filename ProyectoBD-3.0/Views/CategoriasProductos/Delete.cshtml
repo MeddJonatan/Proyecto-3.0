@@ -1,0 +1,32 @@
+﻿@model Proyecto.Model.Clases.CategoriasProductos
+
+@{
+    ViewBag.Title = "Eliminar Categoría";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .card {
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: #fff;
+    }
+ </style>
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>¿Desea Continuar?</h4>
+        </div>
+        <div class="card-footer text-right" style="background: #fff">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            }
+        </div>
+    </div>
+</div>

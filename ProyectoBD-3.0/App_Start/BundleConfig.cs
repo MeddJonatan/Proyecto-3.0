@@ -24,7 +24,8 @@ namespace ProyectoBD_3._0
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/FontAwesome/css/all.min.css"));
         }
     }
 }

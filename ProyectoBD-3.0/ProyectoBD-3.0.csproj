@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ProyectoBD_3._0</RootNamespace>
     <AssemblyName>ProyectoBD-3.0</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,6 +47,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.17.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.17.0\lib\net472\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="AngleSharp.Css, Version=0.17.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.Css.0.17.0\lib\net472\AngleSharp.Css.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,22 +61,36 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.8.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -114,6 +135,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -132,98 +154,30 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriasProductosController.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\DatosUsuariosController.cs" />
+    <Compile Include="Controllers\DocumentoIdentidadController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\EmpresasTelefonicasController.cs" />
+    <Compile Include="Controllers\GenerosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MarcasProductosController.cs" />
+    <Compile Include="Controllers\NumerosTelefonicosController.cs" />
+    <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\ProveedoresController.cs" />
+    <Compile Include="Controllers\TiendasController.cs" />
+    <Compile Include="Controllers\TipoDocumentoIdentidadController.cs" />
+    <Compile Include="Controllers\TiposEntradasController.cs" />
+    <Compile Include="Controllers\TiposSalidasController.cs" />
+    <Compile Include="Controllers\UnidadesMedidasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CategoriasProductos.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Clientes.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DatosUsuarios.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Detalle_Entradas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Detalle_Salidas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DocumentoIdentidad.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Empleados.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EmpresasTelefonicas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Entradas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Genero.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MarcasProductos.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModeloBD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloBD.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModeloBD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModeloBD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NumerosTelefonicos.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Paises.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Productos.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Proveedores.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Salidas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SubCategoriasProductos.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tiendas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TipoEntrada.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TipoSalida.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Tipo_DocumentoIdentidad.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UnidadesMedidas.cs">
-      <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DB_PF.mdf" />
-    <Content Include="App_Data\DB_PF_log.ldf">
-      <DependentUpon>DB_PF.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -243,41 +197,26 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ModeloBD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModeloBD.Context.cs</LastGenOutput>
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\ModeloBD.edmx.sql" />
-    <Content Include="Models\ModeloBD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModeloBD.cs</LastGenOutput>
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\ModeloBD.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModeloBD.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ModeloBD.edmx.diagram">
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
-    </Content>
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.4.1.js" />
-    <Content Include="Scripts\jquery-3.4.1.min.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\ScriptCreados\CategoriasProductos\Index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -292,6 +231,92 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\MarcasProductos\Index.cshtml" />
+    <Content Include="Views\CategoriasProductos\Index.cshtml" />
+    <Content Include="Views\CategoriasProductos\Create.cshtml" />
+    <Content Include="Views\CategoriasProductos\Edit.cshtml" />
+    <Content Include="Views\CategoriasProductos\Details.cshtml" />
+    <Content Include="Views\CategoriasProductos\DeleteConfirmed.cshtml" />
+    <Content Include="Views\CategoriasProductos\Delete.cshtml" />
+    <Content Include="Views\Paises\Index.cshtml" />
+    <Content Include="Views\Paises\Create.cshtml" />
+    <Content Include="Views\Paises\Details.cshtml" />
+    <Content Include="Views\Paises\Edit.cshtml" />
+    <Content Include="Views\Paises\Delete.cshtml" />
+    <Content Include="Views\EmpresasTelefonicas\Details.cshtml" />
+    <Content Include="Views\EmpresasTelefonicas\Create.cshtml" />
+    <Content Include="Views\EmpresasTelefonicas\Edit.cshtml" />
+    <Content Include="Views\EmpresasTelefonicas\Delete.cshtml" />
+    <Content Include="Views\EmpresasTelefonicas\Index.cshtml" />
+    <Content Include="Views\UnidadesMedidas\Index.cshtml" />
+    <Content Include="Views\UnidadesMedidas\Details.cshtml" />
+    <Content Include="Views\UnidadesMedidas\Create.cshtml" />
+    <Content Include="Views\UnidadesMedidas\Edit.cshtml" />
+    <Content Include="Views\UnidadesMedidas\Delete.cshtml" />
+    <Content Include="Views\Proveedores\Index.cshtml" />
+    <Content Include="Views\Proveedores\Details.cshtml" />
+    <Content Include="Views\Proveedores\Create.cshtml" />
+    <Content Include="Views\Proveedores\Edit.cshtml" />
+    <Content Include="Views\Proveedores\Delete.cshtml" />
+    <Content Include="Views\MarcasProductos\Details.cshtml" />
+    <Content Include="Views\MarcasProductos\Create.cshtml" />
+    <Content Include="Views\MarcasProductos\Edit.cshtml" />
+    <Content Include="Views\MarcasProductos\Delete.cshtml" />
+    <Content Include="Views\TiposSalidas\Index.cshtml" />
+    <Content Include="Views\TiposSalidas\Details.cshtml" />
+    <Content Include="Views\TiposSalidas\Create.cshtml" />
+    <Content Include="Views\TiposSalidas\Edit.cshtml" />
+    <Content Include="Views\TiposSalidas\Delete.cshtml" />
+    <Content Include="Views\TiposEntradas\Index.cshtml" />
+    <Content Include="Views\TiposEntradas\Details.cshtml" />
+    <Content Include="Views\TiposEntradas\Create.cshtml" />
+    <Content Include="Views\TiposEntradas\Edit.cshtml" />
+    <Content Include="Views\TiposEntradas\Delete.cshtml" />
+    <Content Include="Views\Tiendas\Index.cshtml" />
+    <Content Include="Views\Tiendas\Details.cshtml" />
+    <Content Include="Views\Tiendas\Create.cshtml" />
+    <Content Include="Views\Tiendas\Edit.cshtml" />
+    <Content Include="Views\Tiendas\Delete.cshtml" />
+    <Content Include="Views\Generos\Index.cshtml" />
+    <Content Include="Views\Generos\Details.cshtml" />
+    <Content Include="Views\Generos\Create.cshtml" />
+    <Content Include="Views\Generos\Edit.cshtml" />
+    <Content Include="Views\Generos\Delete.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Details.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
+    <Content Include="Views\Productos\Delete.cshtml" />
+    <Content Include="Views\TipoDocumentoIdentidad\Index.cshtml" />
+    <Content Include="Views\TipoDocumentoIdentidad\Details.cshtml" />
+    <Content Include="Views\TipoDocumentoIdentidad\Create.cshtml" />
+    <Content Include="Views\TipoDocumentoIdentidad\Edit.cshtml" />
+    <Content Include="Views\TipoDocumentoIdentidad\Delete.cshtml" />
+    <Content Include="Views\DatosUsuarios\Index.cshtml" />
+    <Content Include="Views\DocumentoIdentidad\Index.cshtml" />
+    <Content Include="Views\DocumentoIdentidad\Details.cshtml" />
+    <Content Include="Views\DocumentoIdentidad\Create.cshtml" />
+    <Content Include="Views\DocumentoIdentidad\Edit.cshtml" />
+    <Content Include="Views\DocumentoIdentidad\Delete.cshtml" />
+    <Content Include="Views\DatosUsuarios\Details.cshtml" />
+    <Content Include="Views\DatosUsuarios\Create.cshtml" />
+    <Content Include="Views\DatosUsuarios\Edit.cshtml" />
+    <Content Include="Views\DatosUsuarios\Delete.cshtml" />
+    <Content Include="Views\NumerosTelefonicos\Index.cshtml" />
+    <Content Include="Views\NumerosTelefonicos\Details.cshtml" />
+    <Content Include="Views\NumerosTelefonicos\Create.cshtml" />
+    <Content Include="Views\NumerosTelefonicos\Edit.cshtml" />
+    <Content Include="Views\NumerosTelefonicos\Delete.cshtml" />
+    <Content Include="Views\Empleados\Create.cshtml" />
+    <Content Include="Views\Empleados\Index.cshtml" />
+    <Content Include="Views\Empleados\Edit.cshtml" />
+    <Content Include="Views\Empleados\Details.cshtml" />
+    <Content Include="Views\Empleados\Delete.cshtml" />
+    <Content Include="Views\Clientes\Index.cshtml" />
+    <Content Include="Views\Clientes\Details.cshtml" />
+    <Content Include="Views\Clientes\Create.cshtml" />
+    <Content Include="Views\Clientes\Edit.cshtml" />
+    <Content Include="Views\Clientes\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -320,8 +345,27 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proyecto.BLL\Proyecto.BLL.csproj">
+      <Project>{57aa1277-4405-46b5-ad63-a7d31308f5d7}</Project>
+      <Name>Proyecto.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proyecto.DAL\Proyecto.DAL.csproj">
+      <Project>{96084119-053c-4fe7-a04c-2235eb6547ea}</Project>
+      <Name>Proyecto.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proyecto.Model\Proyecto.Model.csproj">
+      <Project>{be392ce3-2b49-4221-bdb1-3cebe51f5737}</Project>
+      <Name>Proyecto.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

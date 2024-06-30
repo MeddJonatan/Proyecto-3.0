@@ -1,0 +1,35 @@
+﻿@model Proyecto.Model.Clases.NumerosTelefonicos
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-sm bg-light" style="width:70%">
+            <div class="card-header">
+                <h4>Crear Número Telefónico</h4>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        <th>Número Telefónico</th>
+                        @Html.EditorFor(model => model.NumeroTelefono, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.NumeroTelefono, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <th>Empresa Telefónica</th>
+                        @Html.DropDownList("ID_EmpresaTelefonica", null, htmlAttributes: new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_EmpresaTelefonica, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="card-footer text-md-center mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger btn-lg ml-3" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

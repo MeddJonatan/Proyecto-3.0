@@ -1,0 +1,43 @@
+﻿@model Proyecto.Model.Clases.Proveedores
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Crear Proveedor</h4>
+                    </div>
+                    <div class="card-body form-container">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="mb-3">
+                                <th>Razón Social </th>
+                                @*@Html.LabelFor(model => model.RazonSocial, htmlAttributes: new { @class = "control-label" })*@
+                                @Html.EditorFor(model => model.RazonSocial, new { htmlAttributes = new { @class = "form-control", @maxlength = "90", @style = "max-width:100%;" } })
+                                @Html.ValidationMessageFor(model => model.RazonSocial, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3">
+                                <th>Codigo Tributario </th>
+                                @*@Html.LabelFor(model => model.CodigoTributario, htmlAttributes: new { @class = "control-label" })*@
+                                @Html.EditorFor(model => model.CodigoTributario, new { htmlAttributes = new { @class = "form-control", @maxlength = "90", @style = "max-width:100%;" } })
+                                @Html.ValidationMessageFor(model => model.CodigoTributario, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="card-footer text-md-center mt-3">
+                                <button type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
+                                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger btn-lg ml-3" })
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

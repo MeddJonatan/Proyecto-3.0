@@ -1,0 +1,81 @@
+﻿@model Proyecto.Model.Clases.DatosUsuarios
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>Editar Datos de este Usuario</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ID_DatoUsuario)
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Primer Nombre: </th>
+                            <td>
+                                @Html.EditorFor(model => model.PrimerNombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PrimerNombre, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Segundo Nombre: </th>
+                            <td>
+                                @Html.EditorFor(model => model.SegundoNombre, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SegundoNombre, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Primer Apellido: </th>
+                            <td>
+                                @Html.EditorFor(model => model.PrimerApellido, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PrimerApellido, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Segundo Apellido: </th>
+                            <td>
+                                @Html.EditorFor(model => model.SegundoApellido, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.SegundoApellido, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Edad: </th>
+                            <td>
+                                @Html.EditorFor(model => model.Edad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Género: </th>
+                            <td>
+                                @Html.DropDownList("ID_Genero", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ID_Genero, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Número de Telefóno: </th>
+                            <td>
+                                @Html.DropDownList("ID_NumTelefono", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ID_NumTelefono, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="card-footer text-md-center">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

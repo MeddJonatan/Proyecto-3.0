@@ -1,0 +1,61 @@
+﻿@model Proyecto.Model.Clases.Productos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>Producto</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 30%" scope="row">Codigo del Producto:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.Codigo_Producto)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%" scope="row">Nombre del Producto:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.NombreProducto)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%" scope="row">Codigo de la Categoria del Producto:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.CategoriasProductos.Codigo_CategoriaProducto)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th  style="width: 30%"scope="row">Codigo de la Marca del Producto:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.MarcasProductos.Codigo_MarcaProducto)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th  style="width: 30%"scope="row">Abreviatura de la Unidad de Medida:</th>
+                        <td>
+                            @Html.DisplayFor(model => model.UnidadesMedidas.Abreviatura_UnidadMedida)
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="card-footer text-md-center mt-3">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ID_Producto }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID_Producto }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    </div>
+</div>

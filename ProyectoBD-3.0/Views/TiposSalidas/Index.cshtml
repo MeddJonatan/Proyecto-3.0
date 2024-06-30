@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Proyecto.Model.Clases.TiposSalidas>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container-fluid mt-4" style="padding-left:5%; padding-right:5%">
+        <hr />
+        <h2>Listado de Tipos de Salidas</h2>
+        <hr />
+        <hr />
+        <p>
+            @Html.ActionLink("Nuevo Tipo de Salida", "Create", null, new { @class = "btn btn-primary  btn-lg ml-3" })
+        </p>
+        <hr />
+        <hr />
+        <table id="salidasTable" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 30%; text-align: center;" >Codigo Tipo de Salida</th>
+                    <th style="width: 40%; text-align: center;">Descripción del Tipo de Salida</th>
+                    <th style="width: 20%; text-align:center; align-content: center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo_TipoSalida)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion_TipoSalida)
+                        </td>
+                        <td align="center">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.ID_TipoSalida }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Detalles", "Details", new { id = item.ID_TipoSalida }, new { @class = "btn btn-success" })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.ID_TipoSalida }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @section Scripts {
+            <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js   "></script>
+            <script>
+                $(document).ready(function () {
+                    $('#salidasTable').DataTable();
+                });
+            </script>
+        }
+    </div>
+</body>

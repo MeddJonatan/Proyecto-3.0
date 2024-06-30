@@ -1,0 +1,39 @@
+﻿@model Proyecto.Model.Clases.Clientes
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-sm bg-light" style="width:70%">
+            <div class="card-header">
+                <h4>Crear Cliente</h4>
+            </div>
+            <div class="card-body">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="mb-3">
+                        <label for="ID_DatoUsuario">Seleccionar Usuario</label>
+                        @Html.DropDownList("ID_DatoUsuario", (SelectList)ViewBag.DatosUsuarios, new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" })
+                        @Html.ValidationMessageFor(model => model.ID_DatoUsuario, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="NO_Cliente">Número de Cliente</label>
+                        @Html.EditorFor(model => model.NO_Cliente, new { htmlAttributes = new { @class = "form-control", @maxlength = "80", @style = "max-width:100%;" } })
+                        @Html.ValidationMessageFor(model => model.NO_Cliente, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="card-footer text-md-center mt-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Guardar cambios</button>
+                        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger btn-lg ml-3" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

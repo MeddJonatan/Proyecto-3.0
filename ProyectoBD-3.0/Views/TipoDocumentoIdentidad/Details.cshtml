@@ -1,0 +1,45 @@
+﻿@model Proyecto.Model.Clases.TipoDocumentoIdentidad
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>Tipo de Documento de Identidad</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th style="width: 30%" scope="row">Codigo Del Tipo de Documento: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Codigo_TipoDocumento)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="width: 40%" scope="row">Tipo de Documento de Identidad: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Descripcion_TipoDocumentoIdentidad)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th style="width: 30%" scope="row">Pais: </th>
+                        <td>
+                            @Html.DisplayFor(model => model.Paises.Codigo_Pais)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="card-footer text-md-center mt-3">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.ID_TipoDocumentoIdentidad }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID_TipoDocumentoIdentidad }, new { @class = "btn btn-danger" })
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+            </div>
+        </div>
+    </div>
+</div>

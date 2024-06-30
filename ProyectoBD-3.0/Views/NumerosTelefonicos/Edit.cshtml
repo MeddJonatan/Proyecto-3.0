@@ -1,0 +1,46 @@
+﻿@model Proyecto.Model.Clases.NumerosTelefonicos
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light" style="width:70%">
+        <div class="card-header">
+            <h4>Editar Número Telefónico</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ID_NumTelefono)
+                <table class="table table-striped">
+                    <tbody>
+
+                        <tr>
+                            <th scope="row">Número Telefónico: </th>
+                            <td>
+                                @Html.EditorFor(model => model.NumeroTelefono, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.NumeroTelefono, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Empresa Telefónica: </th>
+                            <td>
+                                @Html.DropDownList("ID_EmpresaTelefonica", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ID_EmpresaTelefonica, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="card-footer text-md-center">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

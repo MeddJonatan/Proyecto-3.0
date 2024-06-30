@@ -1,0 +1,70 @@
+﻿@model Proyecto.Model.Clases.EmpresasTelefonicas
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+        }
+
+        .btn-primary-custom {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+        }
+
+        .form-container h4 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-container">
+                <h4>Empresas Telefónicas</h4>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Nombre_EmpresaTelefonica, htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.Nombre_EmpresaTelefonica, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nombre_EmpresaTelefonica, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" value="Crear" class="btn btn-primary-custom" />
+                </div>
+            </div>
+        }
+
+        <div class="text-center mt-3">
+            @Html.ActionLink("Volver al Listado", "Index", null, new { @class = "btn btn-link" })
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

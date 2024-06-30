@@ -1,0 +1,45 @@
+﻿@model Proyecto.Model.Clases.TiposEntradas
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-sm bg-light">
+        <div class="card-header">
+            <h4>Tipo de Entrada</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ID_TipoEntrada)
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(model => model.Codigo_TipoEntrada)</th>
+                            <td>
+                                @Html.EditorFor(model => model.Codigo_TipoEntrada, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Codigo_TipoEntrada, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">@Html.LabelFor(model => model.Descripcion_TipoEntrada)</th>
+                            <td>
+                                @Html.EditorFor(model => model.Descripcion_TipoEntrada, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Descripcion_TipoEntrada, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="card-footer text-md-center">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary ml-2" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
